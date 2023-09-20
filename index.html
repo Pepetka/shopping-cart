@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+				content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<link>
+	<link rel="stylesheet" type="text/css" href="./src/css/index.css">
+	<script src="./src/js/index.js" defer></script>
+</head>
+<body>
+	<header class="header">
+		<div class="header__wrapper">
+			<div class="header__burgerWithLogo">
+				<div class="header__burger">
+					<div></div>
+					<div></div>
+					<div></div>
+				</div>
+				<div class="header__logo">Товары<br>и точка</div>
+			</div>
+
+			<label class="header__search search">
+				<input class="search__input" placeholder="Я ищу..." />
+				<button class="search__button"><img src="./src/assets/icons/Search.svg" alt="search" /></button>
+			</label>
+
+			<div class="header__iconsBlock">
+				<a class="header__profile iconWithText">
+					<img class="iconWithText__icon" src="./src/assets/icons/Profile.svg" alt="Profile">
+					Профиль
+				</a>
+
+				<a class="header__basket iconWithText">
+					<span class="iconWithText__notification notification">3</span>
+					<img class="iconWithText__icon iconWithText__icon_withNotification" src="./src/assets/icons/Basket.svg"
+							 alt="Basket">
+					Корзина
+				</a>
+			</div>
+		</div>
+	</header>
+
+	<main class="main">
+		<section class="goods"></section>
+
+		<section class="total">
+			<div class="total__price totalPrice">
+				<div class="totalPrice__total">
+					Итого
+					<div class="totalPrice__price">
+						2&nbsp;101&nbsp;063
+						<span>сом</span>
+					</div>
+				</div>
+
+				<div class="totalPrice__detailsWrapper">
+					<div class="totalPrice__detail">
+						203 товара
+						<div class="totalPrice__price_small">
+							2&nbsp;302&nbsp;048
+							<span>сом</span>
+						</div>
+					</div>
+					<div class="totalPrice__detail">
+						Скидка
+						<div class="totalPrice__price_small">
+							&minus;200&nbsp;985
+							<span>сом</span>
+						</div>
+					</div>
+					<div class="totalPrice__detail">
+						Доставка
+						<div class="totalPrice__price_small">
+							Бесплатно
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="total__delivery delivery">
+				<div class="delivery__details">
+					<div class="delivery__method method">
+						<div class="method__name">
+							Доставка в пункт выдачи
+						</div>
+
+						<button class="method__change">
+							<img src="./src/assets/icons/Edit.svg" alt="Change delivery method" />
+						</button>
+					</div>
+
+					<div class="delivery__address">
+						Бишкек, улица Ахматбека Суюмбаева, 12/1
+					</div>
+
+					<div class="delivery__date">
+						5–8 фев
+					</div>
+				</div>
+
+				<div class="delivery__information information">
+					<img class="information__confirmed" src="./src/assets/icons/Confirmed.svg" alt="Return confirmed" />
+					<div class="information__details">
+						Обратная доставка товаров на склад при отказе &#8212;<br>
+						<span>бесплатно</span>
+					</div>
+				</div>
+			</div>
+
+			<div class="total__payment payment">
+				<div class="payment__method">
+					<div class="method">
+						<div class="method__name">
+							Оплата картой
+						</div>
+
+						<button class="method__change">
+							<img src="./src/assets/icons/Edit.svg" alt="Change delivery method" />
+						</button>
+					</div>
+
+					<div class="payment__card paymentCard">
+						<img class="paymentCard__paymentSystem" src="./src/assets/icons/Cards/Mir.svg" alt="Payment system" />
+						<span class="paymentCard__number">1234 12•• •••• 1234</span>
+					</div>
+				</div>
+
+				<div class="payment__immediately">
+					<label class="payment__checkbox checkbox">
+						<input type="checkbox" />
+						Списать оплату сразу
+					</label>
+					Спишем оплату с карты при получении
+				</div>
+			</div>
+
+			<div class="total__order">
+				<button class="total__button">Заказать</button>
+				<div class="total__agreement">
+					<img src="./src/assets/icons/Agree.svg" alt="Agreement with the rulesAgreement with the rules"/>
+					<span>Соглашаюсь с правилами пользования торговой площадкой и возврата</span>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<footer class="footer">
+		<div class="footer__copyright">
+			© 2022&nbsp;&nbsp;ООО «Товары и точка»
+		</div>
+	</footer>
+</body>
+</html>
