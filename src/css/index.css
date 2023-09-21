@@ -60,8 +60,13 @@ button {
 input {
 	font-family: "Segoe UI", sans-serif;
 	color: var(--primary-color);
+	border: none;
+	outline: none;
 }
 input:focus {
 	border: none;
 	outline: none;
+}
+a {
+	cursor: pointer;
 }

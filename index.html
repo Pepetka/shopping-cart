@@ -14,11 +14,11 @@
 	<header class="header">
 		<div class="header__wrapper">
 			<div class="header__burgerWithLogo">
-				<div class="header__burger">
-					<div></div>
-					<div></div>
-					<div></div>
-				</div>
+				<button class="header__burger">
+					<span></span>
+					<span></span>
+					<span></span>
+				</button>
 				<div class="header__logo">Товары<br>и точка</div>
 			</div>
 
@@ -50,9 +50,10 @@
 			<div class="orderDetails__goods goods">
 				<div class="goods__header">
 					<label class="goods__checkbox checkbox">
-						<input type="checkbox" />
+						<input type="checkbox" checked />
 						<span>Выбрать все</span>
 					</label>
+
 					<button class="goods__toggle">
 						<img src="./src/assets/icons/Arrow.svg" alt="Toggle list" />
 					</button>
@@ -62,7 +63,7 @@
 					<div class="goods__product product">
 						<div>
 							<label class="product__checkbox checkbox">
-								<input type="checkbox" />
+								<input type="checkbox" checked />
 							</label>
 
 							<div class="product__information">
@@ -124,7 +125,7 @@
 					<div class="goods__product product">
 						<div>
 							<label class="product__checkbox checkbox">
-								<input type="checkbox" />
+								<input type="checkbox" checked />
 							</label>
 
 							<div class="product__information">
@@ -182,7 +183,7 @@
 					<div class="goods__product product">
 						<div>
 							<label class="product__checkbox checkbox">
-								<input type="checkbox" />
+								<input type="checkbox" checked />
 							</label>
 
 							<div class="product__information">
@@ -236,6 +237,238 @@
 						</div>
 					</div>
 				</div>
+			</div>
+
+			<div class="orderDetails_goods_outOfStock goods">
+				<div class="goods__header">
+					<span>Отсутствуют · 3 товара</span>
+
+					<button class="goods__toggle">
+						<img src="./src/assets/icons/Arrow.svg" alt="Toggle list" />
+					</button>
+				</div>
+
+				<div class="goods__list goods__list_outOfStock">
+					<div class="goods__product product">
+						<div>
+							<div class="product__information">
+								<img class="product__image product__image_outOfStock" src="./src/assets/images/product1.png"
+										 alt="Product image">
+
+								<div class="product__details product__details_outOfStock">
+									<div class="product__name">
+										Футболка UZcotton мужская
+									</div>
+
+									<div class="product__options">
+										<span>Цвет: белый</span>
+										<span>Размер: 56</span>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div>
+							<div class="product__controls">
+								<div class="product__buttons">
+									<button><img src="./src/assets/icons/Favorite.svg" alt="Add to favorites" /></button>
+									<button><img src="./src/assets/icons/Basket.svg" alt="Delete" /></button>
+								</div>
+							</div>
+
+							<div class="product__price price">
+							</div>
+						</div>
+					</div>
+<!--					kk-->
+					<div class="goods__product product">
+						<div>
+							<div class="product__information">
+								<img class="product__image product__image_outOfStock" src="./src/assets/images/product2.png"
+										 alt="Product image">
+
+								<div class="product__details product__details_outOfStock">
+									<div class="product__name">
+										Силиконовый чехол картхолдер (отверстия) для карт, прозрачный кейс бампер на Apple iPhone XR, MobiSafe
+									</div>
+
+									<div class="product__options">
+										<span>Цвет: прозрачный</span>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div>
+							<div class="product__controls">
+								<div class="product__buttons">
+									<button><img src="./src/assets/icons/Favorite.svg" alt="Add to favorites" /></button>
+									<button><img src="./src/assets/icons/Basket.svg" alt="Delete" /></button>
+								</div>
+							</div>
+
+							<div class="product__price price">
+							</div>
+						</div>
+					</div>
+<!--					kk-->
+					<div class="goods__product product">
+						<div>
+							<div class="product__information">
+								<img class="product__image product__image_outOfStock" src="./src/assets/images/product3.png"
+										 alt="Product image">
+
+								<div class="product__details product__details_outOfStock">
+									<div class="product__name">
+										Карандаши цветные Faber-Castell "Замок", набор 24 цвета, заточенные, шестигранные, Faber-Castell
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div>
+							<div class="product__controls">
+								<div class="product__buttons">
+									<button><img src="./src/assets/icons/Favorite.svg" alt="Add to favorites" /></button>
+									<button><img src="./src/assets/icons/Basket.svg" alt="Delete" /></button>
+								</div>
+							</div>
+
+							<div class="product__price price">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="orderDetails__delivery card">
+				<div class="card__header">
+					<span>Способ доставки</span>
+					<button class="card__change">Изменить</button>
+				</div>
+
+				<div class="card__content">
+					<div class="card__title">Пункт выдачи</div>
+					<div class="card__data address">
+						<div class="address__data">Бишкек, улица Ахматбека Суюмбаева, 12/1</div>
+						<div class="address__details">
+							<span class="address__rating">
+								<img class="address__star" src="./src/assets/icons/Star.svg" alt="Rating" />
+								4.99
+							</span>
+							Ежедневно с 10 до 21
+						</div>
+					</div>
+					<div class="card__title">Стоимость доставки</div>
+					<div class="card__data">Бесплатно</div>
+					<div class="card__title">5&#8212;6 февраля</div>
+					<div class="card__imagesList">
+						<div class="card__image">
+							<img src="./src/assets/images/product1.png" alt="Product image" />
+						</div>
+						<div class="card__image">
+							<span class="card__notification notification">184</span>
+							<img src="./src/assets/images/product2.png" alt="Product image" />
+						</div>
+						<div class="card__image">
+							<span class="card__notification notification">2</span>
+							<img src="./src/assets/images/product3.png" alt="Product image" />
+						</div>
+					</div>
+					<div class="card__title">7&#8212;8 февраля</div>
+					<div class="card__imagesList">
+						<div class="card__image">
+							<span class="card__notification card__notification_other notification">16</span>
+							<img src="./src/assets/images/product2.png" alt="Product image" />
+						</div>
+					</div>
+				</div>
+
+				<div class="card__information information">
+					<img class="information__confirmed" src="./src/assets/icons/Confirmed.svg" alt="Return confirmed" />
+					<div class="information__details">
+						Обратная доставка товаров на склад при отказе &#8212;
+						<span>бесплатно</span>
+					</div>
+				</div>
+			</div>
+
+			<div class="orderDetails__payment card">
+				<div class="card__header">
+					<span>Способ оплаты</span>
+					<button class="card__change">Изменить</button>
+				</div>
+
+				<div class="orderDetails__card paymentCard">
+					<img class="paymentCard__paymentSystem" src="./src/assets/icons/Cards/Mir.svg" alt="Payment system" />
+					<span class="paymentCard__number">
+						<span>1234 12•• •••• 1234</span>
+						<span>01/30</span>
+					</span>
+				</div>
+
+				<div class="card__additional">
+					Спишем оплату с карты при получении
+				</div>
+			</div>
+
+			<div class="orderDetails__customer card">
+				<div class="card__header">
+					<span>Получатель</span>
+				</div>
+
+				<form class="orderDetails__form form">
+					<div class="form__line1">
+						<div class="form__block">
+							<label class="form__input">
+								<span>Имя</span>
+								<input type="text" placeholder="" />
+							</label>
+
+							<div class="form__error"></div>
+						</div>
+
+						<div class="form__block">
+							<label class="form__input">
+								<span>Фамилия</span>
+								<input type="text" placeholder="" />
+							</label>
+
+							<div class="form__error"></div>
+						</div>
+					</div>
+
+					<div class="form__line2">
+						<div class="form__block">
+							<label class="form__input">
+								<span>Почта</span>
+								<input type="text" placeholder="" />
+							</label>
+
+							<div class="form__error"></div>
+						</div>
+
+						<div class="form__block">
+							<label class="form__input">
+								<span>Телефон</span>
+								<input type="text" placeholder="" value="+7 988 123-45-67" />
+							</label>
+
+							<div class="form__error"></div>
+						</div>
+
+						<div class="form__block">
+							<label class="form__input">
+								<span>ИНН</span>
+								<input type="text" placeholder="" />
+							</label>
+
+							<div class="form__error">
+								Для таможенного оформления
+							</div>
+						</div>
+					</div>
+				</form>
 			</div>
 		</section>
 
@@ -294,10 +527,10 @@
 					</div>
 				</div>
 
-				<div class="delivery__information information">
+				<div class="delivery__information information information_card">
 					<img class="information__confirmed" src="./src/assets/icons/Confirmed.svg" alt="Return confirmed" />
 					<div class="information__details">
-						Обратная доставка товаров на склад при отказе &#8212;<br>
+						Обратная доставка товаров<br/> на склад при отказе &#8212;
 						<span>бесплатно</span>
 					</div>
 				</div>
