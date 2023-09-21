@@ -35,7 +35,7 @@
 
 				<a class="header__basket iconWithText">
 					<span class="iconWithText__notification notification">3</span>
-					<img class="iconWithText__icon iconWithText__icon_withNotification" src="./src/assets/icons/Basket.svg"
+					<img class="iconWithText__icon iconWithText__icon_withNotification" src="./src/assets/icons/Cart.svg"
 							 alt="Basket">
 					Корзина
 				</a>
@@ -44,14 +44,207 @@
 	</header>
 
 	<main class="main">
-		<section class="goods"></section>
+		<section class="orderDetails">
+			<h1 class="main__header">Корзина</h1>
+
+			<div class="orderDetails__goods goods">
+				<div class="goods__header">
+					<label class="goods__checkbox checkbox">
+						<input type="checkbox" />
+						<span>Выбрать все</span>
+					</label>
+					<button class="goods__toggle">
+						<img src="./src/assets/icons/Arrow.svg" alt="Toggle list" />
+					</button>
+				</div>
+
+				<div class="goods__list">
+					<div class="goods__product product">
+						<div>
+							<label class="product__checkbox checkbox">
+								<input type="checkbox" />
+							</label>
+
+							<div class="product__information">
+								<img class="product__image" src="./src/assets/images/product1.png" alt="Product image">
+
+								<div class="product__details">
+									<div class="product__name">
+										Футболка UZcotton мужская
+									</div>
+
+									<div class="product__options">
+										<span>Цвет: белый</span>
+										<span>Размер: 56</span>
+									</div>
+
+									<div class="product__company">
+										<div>Коледино WB</div>
+										<div>
+											OOO Вайлдберриз
+											<img src="./src/assets/icons/Information.svg" alt="information" />
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div>
+							<div class="product__controls">
+								<div class="product__counter counter">
+									<button class="counter__decr" disabled>
+										<span>&minus;</span>
+									</button>
+									<span class="counter__data">1</span>
+									<button class="counter__incr">
+										<span>&plus;</span>
+									</button>
+								</div>
+								<div class="product__left">
+									Осталось 2 шт.
+								</div>
+								<div class="product__buttons">
+									<button><img src="./src/assets/icons/Favorite.svg" alt="Add to favorites" /></button>
+									<button><img src="./src/assets/icons/Basket.svg" alt="Delete" /></button>
+								</div>
+							</div>
+
+							<div class="product__price price">
+								<div class="price__current">
+									522&nbsp;
+									<span>сом</span>
+								</div>
+								<div class="price__previous">
+									1051 сом
+								</div>
+							</div>
+						</div>
+					</div>
+<!--					kk-->
+					<div class="goods__product product">
+						<div>
+							<label class="product__checkbox checkbox">
+								<input type="checkbox" />
+							</label>
+
+							<div class="product__information">
+								<img class="product__image" src="./src/assets/images/product2.png" alt="Product image">
+
+								<div class="product__details">
+									<div class="product__name">
+										Силиконовый чехол картхолдер (отверстия) для карт, прозрачный кейс бампер на Apple iPhone XR, MobiSafe
+									</div>
+
+									<div class="product__options">
+										<span>Цвет: прозрачный</span>
+									</div>
+
+									<div class="product__company">
+										<div>Коледино WB</div>
+										<div>
+											OOO Мегапрофстиль
+											<img src="./src/assets/icons/Information.svg" alt="information" />
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div>
+							<div class="product__controls">
+								<div class="product__counter counter">
+									<button class="counter__decr">
+										<span>&minus;</span>
+									</button>
+									<span class="counter__data">200</span>
+									<button class="counter__incr">
+										<span>&plus;</span>
+									</button>
+								</div>
+								<div class="product__buttons">
+									<button><img src="./src/assets/icons/Favorite.svg" alt="Add to favorites" /></button>
+									<button><img src="./src/assets/icons/Basket.svg" alt="Delete" /></button>
+								</div>
+							</div>
+
+							<div class="product__price price">
+								<div class="price__current price__current_bigNum">
+									2 100 047&nbsp;
+									<span>сом</span>
+								</div>
+								<div class="price__previous price__previous_bigNum">
+									2 300 047 сом
+								</div>
+							</div>
+						</div>
+					</div>
+<!--					kk-->
+					<div class="goods__product product">
+						<div>
+							<label class="product__checkbox checkbox">
+								<input type="checkbox" />
+							</label>
+
+							<div class="product__information">
+								<img class="product__image" src="./src/assets/images/product3.png" alt="Product image">
+
+								<div class="product__details">
+									<div class="product__name">
+										Карандаши цветные Faber-Castell "Замок", набор 24 цвета, заточенные, шестигранные,<br/>Faber-Castell
+									</div>
+
+									<div class="product__company">
+										<div>Коледино WB</div>
+										<div>
+											OOO Вайлдберриз
+											<img src="./src/assets/icons/Information.svg" alt="information" />
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div>
+							<div class="product__controls">
+								<div class="product__counter counter">
+									<button class="counter__decr">
+										<span>&minus;</span>
+									</button>
+									<span class="counter__data">2</span>
+									<button class="counter__incr" disabled>
+										<span>&plus;</span>
+									</button>
+								</div>
+								<div class="product__left">
+									Осталось 2 шт.
+								</div>
+								<div class="product__buttons">
+									<button><img src="./src/assets/icons/Favorite.svg" alt="Add to favorites" /></button>
+									<button><img src="./src/assets/icons/Basket.svg" alt="Delete" /></button>
+								</div>
+							</div>
+
+							<div class="product__price price">
+								<div class="price__current">
+									494&nbsp;
+									<span>сом</span>
+								</div>
+								<div class="price__previous">
+									950 сом
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
 
 		<section class="total">
 			<div class="total__price totalPrice">
 				<div class="totalPrice__total">
 					Итого
 					<div class="totalPrice__price">
-						2&nbsp;101&nbsp;063
+						2 101 063
 						<span>сом</span>
 					</div>
 				</div>
@@ -60,14 +253,14 @@
 					<div class="totalPrice__detail">
 						203 товара
 						<div class="totalPrice__price_small">
-							2&nbsp;302&nbsp;048
+							2 302 048
 							<span>сом</span>
 						</div>
 					</div>
 					<div class="totalPrice__detail">
 						Скидка
 						<div class="totalPrice__price_small">
-							&minus;200&nbsp;985
+							&minus;200 985
 							<span>сом</span>
 						</div>
 					</div>
@@ -141,7 +334,7 @@
 				<button class="total__button">Заказать</button>
 				<div class="total__agreement">
 					<img src="./src/assets/icons/Agree.svg" alt="Agreement with the rulesAgreement with the rules"/>
-					<span>Соглашаюсь с правилами пользования торговой площадкой и возврата</span>
+					<span>Соглашаюсь <span>с правилами пользования торговой площадкой</span> и <span>возврата</span></span>
 				</div>
 			</div>
 		</section>
