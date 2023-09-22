@@ -19,10 +19,11 @@
 					<span></span>
 					<span></span>
 				</button>
+
 				<div class="header__logo">Товары и точка</div>
 			</div>
 
-			<label class="header__search search">
+			<label class="search header__search">
 				<input class="search__input" placeholder="Я ищу..." />
 				<button class="search__button"><img src="./src/assets/icons/Search.svg" alt="Search" /></button>
 			</label>
@@ -30,12 +31,12 @@
 			<button class="header__button"><img src="./src/assets/icons/Search_white.svg" alt="Search" /></button>
 
 			<div class="header__iconsBlock">
-				<a class="header__icon iconWithText">
+				<a class="iconWithText header__icon">
 					<img class="iconWithText__icon" src="./src/assets/icons/Profile.svg" alt="Profile">
 					Профиль
 				</a>
 
-				<a class="header__icon iconWithText">
+				<a class="iconWithText header__icon">
 					<span class="header__notification notification">3</span>
 					<img class="iconWithText__icon iconWithText__icon_withNotification" src="./src/assets/icons/Cart.svg"
 							 alt="Basket">
@@ -49,9 +50,9 @@
 		<section class="orderDetails">
 			<h1 class="main__header">Корзина</h1>
 
-			<div class="orderDetails__goods goods">
+			<div class="goods orderDetails__goods">
 				<div class="goods__header">
-					<label class="goods__checkbox checkbox">
+					<label class="checkbox goods__checkbox">
 						<input type="checkbox" checked />
 						<span>Выбрать все</span>
 					</label>
@@ -63,14 +64,14 @@
 
 				<div data-accordion="normal" class="accordion">
 					<div class="goods__list">
-						<div class="goods__product product">
+						<div class="product goods__product">
 							<div>
-								<label class="product__checkbox checkbox">
+								<label class="checkbox product__checkbox">
 									<input type="checkbox" checked />
 								</label>
 
 								<div class="product__information">
-									<label class="product__mobileCheckbox checkbox">
+									<label class="checkbox product__mobileCheckbox">
 										<input type="checkbox" checked />
 									</label>
 
@@ -81,7 +82,7 @@
 									<img class="product__image" src="./src/assets/images/product1.png" alt="Product image">
 
 									<div class="product__details">
-										<div class="product__mobilePrice price">
+										<div class="price product__mobilePrice">
 											<div class="price__current price__current_bigNum">
 												522&nbsp;
 												<span>сом</span>
@@ -113,7 +114,7 @@
 
 							<div>
 								<div class="product__controls">
-									<div class="product__counter counter">
+									<div class="counter product__counter">
 										<button class="counter__decr" disabled>
 											<span>&minus;</span>
 										</button>
@@ -131,7 +132,7 @@
 									</div>
 								</div>
 
-								<div class="product__price price">
+								<div class="price product__price">
 									<div class="price__current">
 										522&nbsp;
 										<span>сом</span>
@@ -143,21 +144,21 @@
 							</div>
 						</div>
 						<!--					kk-->
-						<div class="goods__product product">
+						<div class="product goods__product">
 							<div>
-								<label class="product__checkbox checkbox">
+								<label class="checkbox product__checkbox">
 									<input type="checkbox" checked />
 								</label>
 
 								<div class="product__information">
-									<label class="product__mobileCheckbox checkbox">
+									<label class="checkbox product__mobileCheckbox">
 										<input type="checkbox" checked />
 									</label>
 
 									<img class="product__image" src="./src/assets/images/product2.png" alt="Product image">
 
 									<div class="product__details">
-										<div class="product__mobilePrice price">
+										<div class="price product__mobilePrice">
 											<div class="price__current price__current_bigNum">
 												2 100 047&nbsp;
 												<span>сом</span>
@@ -188,7 +189,7 @@
 
 							<div>
 								<div class="product__controls">
-									<div class="product__counter counter">
+									<div class="counter product__counter">
 										<button class="counter__decr">
 											<span>&minus;</span>
 										</button>
@@ -203,7 +204,7 @@
 									</div>
 								</div>
 
-								<div class="product__price price">
+								<div class="price product__price">
 									<div class="price__current price__current_bigNum">
 										2 100 047&nbsp;
 										<span>сом</span>
@@ -215,21 +216,21 @@
 							</div>
 						</div>
 						<!--					kk-->
-						<div class="goods__product product">
+						<div class="product goods__product">
 							<div>
-								<label class="product__checkbox checkbox">
+								<label class="checkbox product__checkbox">
 									<input type="checkbox" checked />
 								</label>
 
 								<div class="product__information">
-									<label class="product__mobileCheckbox checkbox">
+									<label class="checkbox product__mobileCheckbox">
 										<input type="checkbox" />
 									</label>
 
 									<img class="product__image" src="./src/assets/images/product3.png" alt="Product image">
 
 									<div class="product__details">
-										<div class="product__mobilePrice price">
+										<div class="price product__mobilePrice">
 											<div class="price__current price__current_bigNum">
 												494&nbsp;
 												<span>сом</span>
@@ -256,7 +257,7 @@
 
 							<div>
 								<div class="product__controls">
-									<div class="product__counter counter">
+									<div class="counter product__counter">
 										<button class="counter__decr">
 											<span>&minus;</span>
 										</button>
@@ -274,7 +275,7 @@
 									</div>
 								</div>
 
-								<div class="product__price price">
+								<div class="price product__price">
 									<div class="price__current">
 										494&nbsp;
 										<span>сом</span>
@@ -289,8 +290,8 @@
 				</div>
 			</div>
 
-			<div class="orderDetails_goods_outOfStock goods">
-				<div class="goods__header">
+			<div class="goods orderDetails__goods orderDetails__goods_outOfStock">
+				<div class="goods__header goods__header_outOfStock">
 					<span>Отсутствуют · 3 товара</span>
 
 					<button data-accordion="outOfStock" class="goods__toggle">
@@ -300,7 +301,7 @@
 
 				<div data-accordion="outOfStock" class="accordion">
 					<div class="goods__list goods__list_outOfStock">
-						<div class="goods__product product">
+						<div class="product goods__product">
 							<div>
 								<div class="product__information">
 									<div class="product__mobileSize">
@@ -331,12 +332,12 @@
 									</div>
 								</div>
 
-								<div class="product__price price">
+								<div class="price product__price">
 								</div>
 							</div>
 						</div>
 						<!--					kk-->
-						<div class="goods__product product">
+						<div class="product goods__product">
 							<div>
 								<div class="product__information">
 									<img class="product__image product__image_outOfStock" src="./src/assets/images/product2.png"
@@ -362,12 +363,12 @@
 									</div>
 								</div>
 
-								<div class="product__price price">
+								<div class="price product__price">
 								</div>
 							</div>
 						</div>
 						<!--					kk-->
-						<div class="goods__product product">
+						<div class="product goods__product">
 							<div>
 								<div class="product__information">
 									<img class="product__image product__image_outOfStock" src="./src/assets/images/product3.png"
@@ -389,7 +390,7 @@
 									</div>
 								</div>
 
-								<div class="product__price price">
+								<div class="price product__price">
 								</div>
 							</div>
 						</div>
@@ -397,7 +398,7 @@
 				</div>
 			</div>
 
-			<div class="orderDetails__delivery card">
+			<div class="card orderDetails__delivery">
 				<div class="card__header">
 					<span>Способ доставки</span>
 					<button class="card__change">Изменить</button>
@@ -406,7 +407,7 @@
 				<div class="card__content">
 					<div class="card__line">
 						<div class="card__title">Пункт выдачи</div>
-						<div class="card__data address">
+						<div class="address card__data">
 							<div class="address__data">Бишкек, улица Ахматбека Суюмбаева, 12/1</div>
 							<div class="address__details">
 							<span class="address__rating">
@@ -431,11 +432,11 @@
 									<img src="./src/assets/images/product1.png" alt="Product image" />
 								</div>
 								<div class="card__image">
-									<span class="card__notification notification">184</span>
+									<span class="notification card__notification">184</span>
 									<img src="./src/assets/images/product2.png" alt="Product image" />
 								</div>
 								<div class="card__image">
-									<span class="card__notification notification">2</span>
+									<span class="notification card__notification">2</span>
 									<img src="./src/assets/images/product3.png" alt="Product image" />
 								</div>
 							</div>
@@ -445,7 +446,7 @@
 							<div class="card__title">7&#8212;8 февраля</div>
 							<div class="card__imagesList">
 								<div class="card__image">
-									<span class="card__notification card__notification_other notification">16</span>
+									<span class="notification card__notification">16</span>
 									<img src="./src/assets/images/product2.png" alt="Product image" />
 								</div>
 							</div>
@@ -453,7 +454,7 @@
 					</div>
 				</div>
 
-				<div class="card__information information">
+				<div class="information card__information">
 					<img class="information__confirmed" src="./src/assets/icons/Confirmed.svg" alt="Return confirmed" />
 					<div class="information__details">
 						Обратная доставка товаров на склад при отказе &#8212;
@@ -462,13 +463,13 @@
 				</div>
 			</div>
 
-			<div class="orderDetails__payment card">
+			<div class="card orderDetails__payment">
 				<div class="card__header">
 					<span>Способ оплаты</span>
 					<button class="card__change">Изменить</button>
 				</div>
 
-				<div class="orderDetails__card paymentCard">
+				<div class="paymentCard orderDetails__card">
 					<img class="paymentCard__paymentSystem" src="./src/assets/icons/Cards/Mir.svg" alt="Payment system" />
 					<span class="paymentCard__number">
 						<span>1234 12•• •••• 1234</span>
@@ -481,12 +482,12 @@
 				</div>
 			</div>
 
-			<div class="orderDetails__customer card">
+			<div class="card orderDetails__customer">
 				<div class="card__header">
 					<span>Получатель</span>
 				</div>
 
-				<form class="orderDetails__form form">
+				<form class="form orderDetails__form">
 					<div class="form__line1">
 						<div class="form__block">
 							<label class="form__input">
@@ -542,7 +543,7 @@
 		</section>
 
 		<section class="total">
-			<div class="total__price totalPrice">
+			<div class="totalPrice total__price">
 				<div class="totalPrice__total">
 					Итого
 					<div class="totalPrice__price">
@@ -575,9 +576,9 @@
 				</div>
 			</div>
 
-			<div class="total__delivery delivery">
+			<div class="delivery total__delivery">
 				<div class="delivery__details">
-					<div class="delivery__method method">
+					<div class="method delivery__method">
 						<div class="method__name">
 							Доставка в пункт выдачи
 						</div>
@@ -596,7 +597,7 @@
 					</div>
 				</div>
 
-				<div class="delivery__information information information_card">
+				<div class="information information_card delivery__information">
 					<img class="information__confirmed" src="./src/assets/icons/Confirmed.svg" alt="Return confirmed" />
 					<div class="information__details">
 						Обратная доставка товаров<br/> на склад при отказе &#8212;
@@ -617,14 +618,14 @@
 						</button>
 					</div>
 
-					<div class="payment__card paymentCard">
+					<div class="paymentCard payment__card">
 						<img class="paymentCard__paymentSystem" src="./src/assets/icons/Cards/Mir.svg" alt="Payment system" />
 						<span class="paymentCard__number">1234 12•• •••• 1234</span>
 					</div>
 				</div>
 
 				<div class="payment__immediately">
-					<label class="payment__checkbox checkbox">
+					<label class="checkbox payment__checkbox">
 						<input type="checkbox" />
 						Списать оплату сразу
 					</label>
@@ -649,26 +650,26 @@
 	</footer>
 
 	<nav class="tabbar">
-		<a class="tabbar__icon iconWithText">
+		<a class="iconWithText tabbar__icon">
 			<img class="iconWithText__icon iconWithText__icon_gray" src="./src/assets/icons/Main.svg" alt="Main">
 		</a>
 
-		<a class="tabbar__icon iconWithText">
+		<a class="iconWithText tabbar__icon">
 			<img class="iconWithText__icon iconWithText__icon_gray" src="./src/assets/icons/Catalog.svg" alt="Catalog">
 		</a>
 
-		<a class="tabbar__icon iconWithText">
+		<a class="iconWithText tabbar__icon">
 			<span class="tabbar__notification notification">3</span>
 			<img class="iconWithText__icon iconWithText__icon_gray iconWithText__icon_withNotification"
 					 src="./src/assets/icons/Cart_selected.svg"
 					 alt="Basket">
 		</a>
 
-		<a class="tabbar__icon iconWithText">
+		<a class="iconWithText tabbar__icon">
 			<img class="iconWithText__icon iconWithText__icon_gray" src="./src/assets/icons/Favorites.svg" alt="Favorites">
 		</a>
 
-		<a class="tabbar__icon iconWithText">
+		<a class="iconWithText tabbar__icon">
 			<img class="iconWithText__icon iconWithText__icon_gray" src="./src/assets/icons/Profile_gray.svg" alt="Profile">
 		</a>
 	</nav>

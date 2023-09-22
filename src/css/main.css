@@ -11,6 +11,8 @@
 	z-index: 1;
 }
 .main__header {
+	position: relative;
+	top: 1px;
 	margin-bottom: 27px;
 	font-size: 28px;
 	font-style: normal;
@@ -31,6 +33,7 @@
 		gap: 16px;
 	}
 	.main__header {
+		top: 0;
 		margin-bottom: 16px;
 		font-size: 20px;
 		font-style: normal;

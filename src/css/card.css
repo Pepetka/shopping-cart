@@ -77,9 +77,6 @@
 	line-height: 16px;
 	padding-inline: 5px;
 }
-.card__notification_other {
-	transform: translate(4px, calc(-50% + 3px));
-}
 .card__information {
 	display: flex;
 	align-items: center;

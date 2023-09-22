@@ -1,8 +1,6 @@
 .notification {
 	position: absolute;
 	display: block;
-	top: 0;
-	right: 0;
 	min-width: 16px;
 	height: 16px;
 	border-radius: 8px;
