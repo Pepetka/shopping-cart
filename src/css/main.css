@@ -28,6 +28,7 @@
 @media (max-width: 576px) {
 	.main {
 		padding: 15px 16px 24px 16px;
+		gap: 16px;
 	}
 	.main__header {
 		margin-bottom: 16px;

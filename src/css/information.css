@@ -20,8 +20,14 @@
 	color: var(--confirmed-color);
 	border-bottom: 1px dashed rgba(var(--confirmed-color-rgb), 0.2);
 }
+
 @media (min-width: 1050px) {
 	.information_card br {
 		display: none;
+	}
+}
+@media (max-width: 576px) {
+	.information_card {
+		background: var(--bg-smoky-dark);
 	}
 }

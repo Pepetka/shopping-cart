@@ -22,3 +22,9 @@
 	color: var(--accent-color);
 	border-bottom: 1px dashed rgba(var(--accent-color-rgb), 0.2);
 }
+
+@media (max-width: 576px) {
+	.delivery__information {
+		background: var(--bg-smoky-dark);
+	}
+}

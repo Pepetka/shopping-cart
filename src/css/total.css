@@ -41,8 +41,20 @@
 	width: 13px;
 	height: 24px;
 }
-@media (max-width: 1023px) {
+@media (max-width: 1024px) {
 	.total {
 		width: 100%;
+	}
+}
+@media (max-width: 576px) {
+	.total {
+		padding: 8px 0 16px 0;
+		border-radius: 0;
+		background: none;
+		box-shadow: none;
+		gap: 16px;
+	}
+	.total__payment {
+		margin-top: 1px;
 	}
 }

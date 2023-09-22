@@ -80,7 +80,7 @@
 	justify-content: end;
 }
 .product__details_outOfStock {
-	width: 309px;
+	max-width: 309px;
 	color: var(--gray-color);
 }
 .product__image_outOfStock {
@@ -191,5 +191,8 @@
 	.product__mobileSize span {
 		position: relative;
 		bottom: 1px;
+	}
+	.product__buttons_outOfStock {
+		padding-inline: 4px;
 	}
 }

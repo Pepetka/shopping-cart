@@ -18,3 +18,13 @@
 	border-radius: 8px;
 	background: var(--bg-smoky);
 }
+
+@media (max-width: 576px) {
+	.payment__method {
+		display: none;
+	}
+	.payment__immediately {
+		background: var(--bg-smoky-dark);
+		margin-bottom: 8px;
+	}
+}
