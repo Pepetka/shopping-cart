@@ -1,0 +1,64 @@
+.form {
+	display: grid;
+	grid-column-gap: 24px;
+	max-width: 700px;
+}
+.form__input {
+	height: 46px;
+	display: flex;
+	flex-direction: column;
+	justify-content: end;
+	padding-bottom: 3px;
+	border-bottom: 1px solid rgba(var(--secondary-color-rgb), 0.2);
+	color: var(--gray-color);
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 24px;
+}
+.form__input input {
+	color: var(--secondary-color);
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 24px;
+}
+.form__input span {
+	position: relative;
+	pointer-events: none;
+	top: 24px;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 24px;
+}
+.form__input:has(> input:focus) span, .form__input:has(> input:not(:placeholder-shown)) span  {
+	position: relative;
+	top: -2px;
+	font-size: 13px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 16px;
+}
+.form__block {
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+}
+.form__error {
+	height: 14px;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 14px;
+}
+.form__line1 {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-column-gap: 24px;
+}
+.form__line2 {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-column-gap: 24px;
+}

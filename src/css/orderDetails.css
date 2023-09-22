@@ -1,0 +1,30 @@
+.orderDetails {
+	width: 78.5%;
+	margin-top: 10px;
+}
+.orderDetails__goods_outOfStock {
+	margin-top: -1px;
+}
+.orderDetails__delivery {
+	margin-bottom: 16px;
+}
+.orderDetails__payment {
+	margin-bottom: 16px;
+}
+.orderDetails__card {
+	margin-bottom: 8px;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 24px;
+}
+@media (max-width: 1023px) {
+	.orderDetails {
+		width: 100%;
+	}
+}
+@media (max-width: 576px) {
+	.orderDetails {
+		margin-top: 0;
+	}
+}

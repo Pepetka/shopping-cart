@@ -1,0 +1,27 @@
+.information {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+.information_card {
+	width: 100%;
+	border-radius: 8px;
+	padding: 8px 8px 11px 8px;
+	background: var(--bg-smoky);
+}
+.information__confirmed {
+	width: 22px;
+	height: 22px;
+	margin-bottom: 2px;
+}
+.information__details span {
+	box-sizing: content-box;
+	color: var(--confirmed-color);
+	border-bottom: 1px dashed rgba(var(--confirmed-color-rgb), 0.2);
+}
+@media (min-width: 1050px) {
+	.information_card br {
+		display: none;
+	}
+}

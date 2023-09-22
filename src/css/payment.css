@@ -1,0 +1,20 @@
+.payment {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+}
+.payment__method {
+	display: flex;
+	flex-direction: column;
+	gap: 3px;
+}
+.payment__immediately {
+	height: 66px;
+	width: 100%;
+	padding: 8px 8px 12px 8px;
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	border-radius: 8px;
+	background: var(--bg-smoky);
+}

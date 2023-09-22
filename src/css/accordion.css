@@ -1,0 +1,8 @@
+.accordion {
+	display: grid;
+	grid-template-rows: 1fr;
+	transition: grid-template-rows 0.2s linear;
+}
+.accordion__close {
+	grid-template-rows: 0fr;
+}

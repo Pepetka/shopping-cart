@@ -1,0 +1,21 @@
+.iconWithText {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
+	align-items: center;
+	text-align: center;
+	font-size: 13px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 16px;
+}
+.iconWithText__icon {
+	width: 29px;
+	height: 29px;
+	margin-left: 3px;
+}
+.iconWithText__icon_withNotification {
+	margin-right: 7px;
+	margin-left: 0;
+}

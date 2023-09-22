@@ -1,7 +1,28 @@
 @import url('../assets/fonts/stylesheet.css');
-@import url('./header.css');
-@import url('./main.css');
+@import url('./accordion.css');
+@import url('./address.css');
+@import url('./card.css');
+@import url('./checkbox.css');
+@import url('./counter.css');
+@import url('./delivery.css');
 @import url('./footer.css');
+@import url('./form.css');
+@import url('./goods.css');
+@import url('./header.css');
+@import url('./iconWithText.css');
+@import url('./information.css');
+@import url('./main.css');
+@import url('./method.css');
+@import url('./notification.css');
+@import url('./orderDetails.css');
+@import url('./payment.css');
+@import url('./paymentCard.css');
+@import url('./price.css');
+@import url('./product.css');
+@import url('./search.css');
+@import url('./tabbar.css');
+@import url('./total.css');
+@import url('./totalPrice.css');
 
 *, *:after, *:before {
 	box-sizing: border-box;
@@ -12,8 +33,10 @@
 :root {
 	--overlap-heihgt: 24px;
 	--header-height: 112px;
+	--header-height-mobile: 80px;
 	--footer-height: 88px;
 	--header-content-height: calc(var(--header-height) - var(--overlap-heihgt));
+	--header-content-height-mobile: calc(var(--header-height-mobile) - var(--overlap-heihgt));
 	--footer-content-height: calc(var(--footer-height) - var(--overlap-heihgt));
 
 	--primary-bg-color: #6725A8FF;

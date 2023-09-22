@@ -19,22 +19,24 @@
 					<span></span>
 					<span></span>
 				</button>
-				<div class="header__logo">Товары<br>и точка</div>
+				<div class="header__logo">Товары и точка</div>
 			</div>
 
 			<label class="header__search search">
 				<input class="search__input" placeholder="Я ищу..." />
-				<button class="search__button"><img src="./src/assets/icons/Search.svg" alt="search" /></button>
+				<button class="search__button"><img src="./src/assets/icons/Search.svg" alt="Search" /></button>
 			</label>
 
+			<button class="header__button"><img src="./src/assets/icons/Search_white.svg" alt="Search" /></button>
+
 			<div class="header__iconsBlock">
-				<a class="header__profile iconWithText">
+				<a class="header__icon iconWithText">
 					<img class="iconWithText__icon" src="./src/assets/icons/Profile.svg" alt="Profile">
 					Профиль
 				</a>
 
-				<a class="header__basket iconWithText">
-					<span class="iconWithText__notification notification">3</span>
+				<a class="header__icon iconWithText">
+					<span class="header__notification notification">3</span>
 					<img class="iconWithText__icon iconWithText__icon_withNotification" src="./src/assets/icons/Cart.svg"
 							 alt="Basket">
 					Корзина
@@ -54,184 +56,232 @@
 						<span>Выбрать все</span>
 					</label>
 
-					<button class="goods__toggle">
+					<button data-accordion="normal" class="goods__toggle">
 						<img src="./src/assets/icons/Arrow.svg" alt="Toggle list" />
 					</button>
 				</div>
 
-				<div class="goods__list">
-					<div class="goods__product product">
-						<div>
-							<label class="product__checkbox checkbox">
-								<input type="checkbox" checked />
-							</label>
+				<div data-accordion="normal" class="accordion">
+					<div class="goods__list">
+						<div class="goods__product product">
+							<div>
+								<label class="product__checkbox checkbox">
+									<input type="checkbox" checked />
+								</label>
 
-							<div class="product__information">
-								<img class="product__image" src="./src/assets/images/product1.png" alt="Product image">
+								<div class="product__information">
+									<label class="product__mobileCheckbox checkbox">
+										<input type="checkbox" checked />
+									</label>
 
-								<div class="product__details">
-									<div class="product__name">
-										Футболка UZcotton мужская
+									<div class="product__mobileSize">
+										<span>56</span>
 									</div>
 
-									<div class="product__options">
-										<span>Цвет: белый</span>
-										<span>Размер: 56</span>
-									</div>
+									<img class="product__image" src="./src/assets/images/product1.png" alt="Product image">
 
-									<div class="product__company">
-										<div>Коледино WB</div>
-										<div>
-											OOO Вайлдберриз
-											<img src="./src/assets/icons/Information.svg" alt="information" />
+									<div class="product__details">
+										<div class="product__mobilePrice price">
+											<div class="price__current price__current_bigNum">
+												522&nbsp;
+												<span>сом</span>
+											</div>
+											<div class="price__previous price__previous_bigNum">
+												1051 сом
+											</div>
+										</div>
+
+										<div class="product__name">
+											Футболка UZcotton мужская
+										</div>
+
+										<div class="product__options">
+											<span>Цвет: белый</span>
+											<span class="product__size">Размер: 56</span>
+										</div>
+
+										<div class="product__company">
+											<div>Коледино WB</div>
+											<div>
+												OOO Вайлдберриз
+												<img src="./src/assets/icons/Information.svg" alt="information" />
+											</div>
 										</div>
 									</div>
 								</div>
 							</div>
-						</div>
 
-						<div>
-							<div class="product__controls">
-								<div class="product__counter counter">
-									<button class="counter__decr" disabled>
-										<span>&minus;</span>
-									</button>
-									<span class="counter__data">1</span>
-									<button class="counter__incr">
-										<span>&plus;</span>
-									</button>
+							<div>
+								<div class="product__controls">
+									<div class="product__counter counter">
+										<button class="counter__decr" disabled>
+											<span>&minus;</span>
+										</button>
+										<span class="counter__data">1</span>
+										<button class="counter__incr">
+											<span>&plus;</span>
+										</button>
+									</div>
+									<div class="product__left">
+										Осталось 2 шт.
+									</div>
+									<div class="product__buttons">
+										<button><img src="./src/assets/icons/Favorite.svg" alt="Add to favorites" /></button>
+										<button><img src="./src/assets/icons/Basket.svg" alt="Delete" /></button>
+									</div>
 								</div>
-								<div class="product__left">
-									Осталось 2 шт.
-								</div>
-								<div class="product__buttons">
-									<button><img src="./src/assets/icons/Favorite.svg" alt="Add to favorites" /></button>
-									<button><img src="./src/assets/icons/Basket.svg" alt="Delete" /></button>
+
+								<div class="product__price price">
+									<div class="price__current">
+										522&nbsp;
+										<span>сом</span>
+									</div>
+									<div class="price__previous">
+										1051 сом
+									</div>
 								</div>
 							</div>
-
-							<div class="product__price price">
-								<div class="price__current">
-									522&nbsp;
-									<span>сом</span>
-								</div>
-								<div class="price__previous">
-									1051 сом
-								</div>
-							</div>
 						</div>
-					</div>
-<!--					kk-->
-					<div class="goods__product product">
-						<div>
-							<label class="product__checkbox checkbox">
-								<input type="checkbox" checked />
-							</label>
+						<!--					kk-->
+						<div class="goods__product product">
+							<div>
+								<label class="product__checkbox checkbox">
+									<input type="checkbox" checked />
+								</label>
 
-							<div class="product__information">
-								<img class="product__image" src="./src/assets/images/product2.png" alt="Product image">
+								<div class="product__information">
+									<label class="product__mobileCheckbox checkbox">
+										<input type="checkbox" checked />
+									</label>
 
-								<div class="product__details">
-									<div class="product__name">
-										Силиконовый чехол картхолдер (отверстия) для карт, прозрачный кейс бампер на Apple iPhone XR, MobiSafe
-									</div>
+									<img class="product__image" src="./src/assets/images/product2.png" alt="Product image">
 
-									<div class="product__options">
-										<span>Цвет: прозрачный</span>
-									</div>
+									<div class="product__details">
+										<div class="product__mobilePrice price">
+											<div class="price__current price__current_bigNum">
+												2 100 047&nbsp;
+												<span>сом</span>
+											</div>
+											<div class="price__previous price__previous_bigNum">
+												2 300 047 сом
+											</div>
+										</div>
 
-									<div class="product__company">
-										<div>Коледино WB</div>
-										<div>
-											OOO Мегапрофстиль
-											<img src="./src/assets/icons/Information.svg" alt="information" />
+										<div class="product__name">
+											Силиконовый чехол картхолдер (отверстия) для карт, прозрачный кейс бампер на Apple iPhone XR, MobiSafe
+										</div>
+
+										<div class="product__options">
+											<span>Цвет: прозрачный</span>
+										</div>
+
+										<div class="product__company">
+											<div>Коледино WB</div>
+											<div>
+												OOO Мегапрофстиль
+												<img src="./src/assets/icons/Information.svg" alt="information" />
+											</div>
 										</div>
 									</div>
 								</div>
 							</div>
-						</div>
 
-						<div>
-							<div class="product__controls">
-								<div class="product__counter counter">
-									<button class="counter__decr">
-										<span>&minus;</span>
-									</button>
-									<span class="counter__data">200</span>
-									<button class="counter__incr">
-										<span>&plus;</span>
-									</button>
-								</div>
-								<div class="product__buttons">
-									<button><img src="./src/assets/icons/Favorite.svg" alt="Add to favorites" /></button>
-									<button><img src="./src/assets/icons/Basket.svg" alt="Delete" /></button>
-								</div>
-							</div>
-
-							<div class="product__price price">
-								<div class="price__current price__current_bigNum">
-									2 100 047&nbsp;
-									<span>сом</span>
-								</div>
-								<div class="price__previous price__previous_bigNum">
-									2 300 047 сом
-								</div>
-							</div>
-						</div>
-					</div>
-<!--					kk-->
-					<div class="goods__product product">
-						<div>
-							<label class="product__checkbox checkbox">
-								<input type="checkbox" checked />
-							</label>
-
-							<div class="product__information">
-								<img class="product__image" src="./src/assets/images/product3.png" alt="Product image">
-
-								<div class="product__details">
-									<div class="product__name">
-										Карандаши цветные Faber-Castell "Замок", набор 24 цвета, заточенные, шестигранные,<br/>Faber-Castell
+							<div>
+								<div class="product__controls">
+									<div class="product__counter counter">
+										<button class="counter__decr">
+											<span>&minus;</span>
+										</button>
+										<span class="counter__data">200</span>
+										<button class="counter__incr">
+											<span>&plus;</span>
+										</button>
 									</div>
+									<div class="product__buttons">
+										<button><img src="./src/assets/icons/Favorite.svg" alt="Add to favorites" /></button>
+										<button><img src="./src/assets/icons/Basket.svg" alt="Delete" /></button>
+									</div>
+								</div>
 
-									<div class="product__company">
-										<div>Коледино WB</div>
-										<div>
-											OOO Вайлдберриз
-											<img src="./src/assets/icons/Information.svg" alt="information" />
+								<div class="product__price price">
+									<div class="price__current price__current_bigNum">
+										2 100 047&nbsp;
+										<span>сом</span>
+									</div>
+									<div class="price__previous price__previous_bigNum">
+										2 300 047 сом
+									</div>
+								</div>
+							</div>
+						</div>
+						<!--					kk-->
+						<div class="goods__product product">
+							<div>
+								<label class="product__checkbox checkbox">
+									<input type="checkbox" checked />
+								</label>
+
+								<div class="product__information">
+									<label class="product__mobileCheckbox checkbox">
+										<input type="checkbox" />
+									</label>
+
+									<img class="product__image" src="./src/assets/images/product3.png" alt="Product image">
+
+									<div class="product__details">
+										<div class="product__mobilePrice price">
+											<div class="price__current price__current_bigNum">
+												494&nbsp;
+												<span>сом</span>
+											</div>
+											<div class="price__previous price__previous_bigNum">
+												950 сом
+											</div>
+										</div>
+
+										<div class="product__name">
+											Карандаши цветные Faber-Castell "Замок", набор 24 цвета, заточенные, шестигранные,<br/>Faber-Castell
+										</div>
+
+										<div class="product__company">
+											<div>Коледино WB</div>
+											<div>
+												OOO Вайлдберриз
+												<img src="./src/assets/icons/Information.svg" alt="information" />
+											</div>
 										</div>
 									</div>
 								</div>
 							</div>
-						</div>
 
-						<div>
-							<div class="product__controls">
-								<div class="product__counter counter">
-									<button class="counter__decr">
-										<span>&minus;</span>
-									</button>
-									<span class="counter__data">2</span>
-									<button class="counter__incr" disabled>
-										<span>&plus;</span>
-									</button>
+							<div>
+								<div class="product__controls">
+									<div class="product__counter counter">
+										<button class="counter__decr">
+											<span>&minus;</span>
+										</button>
+										<span class="counter__data">2</span>
+										<button class="counter__incr" disabled>
+											<span>&plus;</span>
+										</button>
+									</div>
+									<div class="product__left">
+										Осталось 2 шт.
+									</div>
+									<div class="product__buttons">
+										<button><img src="./src/assets/icons/Favorite.svg" alt="Add to favorites" /></button>
+										<button><img src="./src/assets/icons/Basket.svg" alt="Delete" /></button>
+									</div>
 								</div>
-								<div class="product__left">
-									Осталось 2 шт.
-								</div>
-								<div class="product__buttons">
-									<button><img src="./src/assets/icons/Favorite.svg" alt="Add to favorites" /></button>
-									<button><img src="./src/assets/icons/Basket.svg" alt="Delete" /></button>
-								</div>
-							</div>
 
-							<div class="product__price price">
-								<div class="price__current">
-									494&nbsp;
-									<span>сом</span>
-								</div>
-								<div class="price__previous">
-									950 сом
+								<div class="product__price price">
+									<div class="price__current">
+										494&nbsp;
+										<span>сом</span>
+									</div>
+									<div class="price__previous">
+										950 сом
+									</div>
 								</div>
 							</div>
 						</div>
@@ -243,98 +293,104 @@
 				<div class="goods__header">
 					<span>Отсутствуют · 3 товара</span>
 
-					<button class="goods__toggle">
+					<button data-accordion="outOfStock" class="goods__toggle">
 						<img src="./src/assets/icons/Arrow.svg" alt="Toggle list" />
 					</button>
 				</div>
 
-				<div class="goods__list goods__list_outOfStock">
-					<div class="goods__product product">
-						<div>
-							<div class="product__information">
-								<img class="product__image product__image_outOfStock" src="./src/assets/images/product1.png"
-										 alt="Product image">
-
-								<div class="product__details product__details_outOfStock">
-									<div class="product__name">
-										Футболка UZcotton мужская
+				<div data-accordion="outOfStock" class="accordion">
+					<div class="goods__list goods__list_outOfStock">
+						<div class="goods__product product">
+							<div>
+								<div class="product__information">
+									<div class="product__mobileSize">
+										<span>56</span>
 									</div>
 
-									<div class="product__options">
-										<span>Цвет: белый</span>
-										<span>Размер: 56</span>
-									</div>
-								</div>
-							</div>
-						</div>
+									<img class="product__image product__image_outOfStock" src="./src/assets/images/product1.png"
+											 alt="Product image">
 
-						<div>
-							<div class="product__controls">
-								<div class="product__buttons">
-									<button><img src="./src/assets/icons/Favorite.svg" alt="Add to favorites" /></button>
-									<button><img src="./src/assets/icons/Basket.svg" alt="Delete" /></button>
-								</div>
-							</div>
+									<div class="product__details product__details_outOfStock">
+										<div class="product__name">
+											Футболка UZcotton мужская
+										</div>
 
-							<div class="product__price price">
-							</div>
-						</div>
-					</div>
-<!--					kk-->
-					<div class="goods__product product">
-						<div>
-							<div class="product__information">
-								<img class="product__image product__image_outOfStock" src="./src/assets/images/product2.png"
-										 alt="Product image">
-
-								<div class="product__details product__details_outOfStock">
-									<div class="product__name">
-										Силиконовый чехол картхолдер (отверстия) для карт, прозрачный кейс бампер на Apple iPhone XR, MobiSafe
-									</div>
-
-									<div class="product__options">
-										<span>Цвет: прозрачный</span>
+										<div class="product__options">
+											<span>Цвет: белый</span>
+											<span class="product__size">Размер: 56</span>
+										</div>
 									</div>
 								</div>
 							</div>
-						</div>
 
-						<div>
-							<div class="product__controls">
-								<div class="product__buttons">
-									<button><img src="./src/assets/icons/Favorite.svg" alt="Add to favorites" /></button>
-									<button><img src="./src/assets/icons/Basket.svg" alt="Delete" /></button>
+							<div>
+								<div class="product__controls">
+									<div class="product__buttons">
+										<button><img src="./src/assets/icons/Favorite.svg" alt="Add to favorites" /></button>
+										<button><img src="./src/assets/icons/Basket.svg" alt="Delete" /></button>
+									</div>
+								</div>
+
+								<div class="product__price price">
 								</div>
 							</div>
-
-							<div class="product__price price">
-							</div>
 						</div>
-					</div>
-<!--					kk-->
-					<div class="goods__product product">
-						<div>
-							<div class="product__information">
-								<img class="product__image product__image_outOfStock" src="./src/assets/images/product3.png"
-										 alt="Product image">
+						<!--					kk-->
+						<div class="goods__product product">
+							<div>
+								<div class="product__information">
+									<img class="product__image product__image_outOfStock" src="./src/assets/images/product2.png"
+											 alt="Product image">
 
-								<div class="product__details product__details_outOfStock">
-									<div class="product__name">
-										Карандаши цветные Faber-Castell "Замок", набор 24 цвета, заточенные, шестигранные, Faber-Castell
+									<div class="product__details product__details_outOfStock">
+										<div class="product__name">
+											Силиконовый чехол картхолдер (отверстия) для карт, прозрачный кейс бампер на Apple iPhone XR, MobiSafe
+										</div>
+
+										<div class="product__options">
+											<span>Цвет: прозрачный</span>
+										</div>
 									</div>
 								</div>
 							</div>
-						</div>
 
-						<div>
-							<div class="product__controls">
-								<div class="product__buttons">
-									<button><img src="./src/assets/icons/Favorite.svg" alt="Add to favorites" /></button>
-									<button><img src="./src/assets/icons/Basket.svg" alt="Delete" /></button>
+							<div>
+								<div class="product__controls">
+									<div class="product__buttons">
+										<button><img src="./src/assets/icons/Favorite.svg" alt="Add to favorites" /></button>
+										<button><img src="./src/assets/icons/Basket.svg" alt="Delete" /></button>
+									</div>
+								</div>
+
+								<div class="product__price price">
+								</div>
+							</div>
+						</div>
+						<!--					kk-->
+						<div class="goods__product product">
+							<div>
+								<div class="product__information">
+									<img class="product__image product__image_outOfStock" src="./src/assets/images/product3.png"
+											 alt="Product image">
+
+									<div class="product__details product__details_outOfStock">
+										<div class="product__name">
+											Карандаши цветные Faber-Castell "Замок", набор 24 цвета, заточенные, шестигранные, Faber-Castell
+										</div>
+									</div>
 								</div>
 							</div>
 
-							<div class="product__price price">
+							<div>
+								<div class="product__controls">
+									<div class="product__buttons">
+										<button><img src="./src/assets/icons/Favorite.svg" alt="Add to favorites" /></button>
+										<button><img src="./src/assets/icons/Basket.svg" alt="Delete" /></button>
+									</div>
+								</div>
+
+								<div class="product__price price">
+								</div>
 							</div>
 						</div>
 					</div>
@@ -578,5 +634,30 @@
 			© 2022&nbsp;&nbsp;ООО «Товары и точка»
 		</div>
 	</footer>
+
+	<nav class="tabbar">
+		<a class="tabbar__icon iconWithText">
+			<img class="iconWithText__icon iconWithText__icon_gray" src="./src/assets/icons/Main.svg" alt="Main">
+		</a>
+
+		<a class="tabbar__icon iconWithText">
+			<img class="iconWithText__icon iconWithText__icon_gray" src="./src/assets/icons/Catalog.svg" alt="Catalog">
+		</a>
+
+		<a class="tabbar__icon iconWithText">
+			<span class="tabbar__notification notification">3</span>
+			<img class="iconWithText__icon iconWithText__icon_gray iconWithText__icon_withNotification"
+					 src="./src/assets/icons/Cart_selected.svg"
+					 alt="Basket">
+		</a>
+
+		<a class="tabbar__icon iconWithText">
+			<img class="iconWithText__icon iconWithText__icon_gray" src="./src/assets/icons/Favorites.svg" alt="Favorites">
+		</a>
+
+		<a class="tabbar__icon iconWithText">
+			<img class="iconWithText__icon iconWithText__icon_gray" src="./src/assets/icons/Profile_gray.svg" alt="Profile">
+		</a>
+	</nav>
 </body>
 </html>

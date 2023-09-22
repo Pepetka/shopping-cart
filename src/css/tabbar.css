@@ -1,0 +1,10 @@
+.tabbar {
+	height: 56px;
+	padding-inline: 13px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.tabbar__notification {
+	transform: translate(-0%, -20%);
+}

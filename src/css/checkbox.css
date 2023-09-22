@@ -1,0 +1,27 @@
+.checkbox {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	cursor: pointer;
+}
+.checkbox:before {
+	content: " ";
+	height: 22px;
+	width: 22px;
+	background: url("../assets/icons/Checkbox.svg") var(--content-bg-color);
+	border-radius: 6px;
+	position: relative;
+	cursor: pointer;
+}
+.checkbox:has(> input:checked):before {
+	content: " ";
+	height: 22px;
+	width: 22px;
+	background: url("../assets/icons/Checkbox_checked.svg") var(--content-bg-color);
+	border-radius: 6px;
+	position: relative;
+	cursor: pointer;
+}
+.checkbox input {
+	display: none;
+}

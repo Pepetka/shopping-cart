@@ -1,0 +1,16 @@
+.paymentCard {
+	display: flex;
+	gap: 8px;
+	align-items: center;
+}
+.paymentCard__paymentSystem {
+	width: 32px;
+	height: 24px;
+	padding: 1px;
+	border-radius: 4px;
+	background: var(--bg-smoky);
+}
+.paymentCard__number {
+	display: flex;
+	gap: 12px;
+}
