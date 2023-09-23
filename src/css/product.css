@@ -103,9 +103,6 @@
 .product__mobilePrice {
 	display: none;
 }
-.product__mobileCheckbox {
-	display: none;
-}
 .product__mobileSize {
 	display: none;
 }
@@ -133,7 +130,14 @@
 
 	}
 	.product__checkbox {
-		display: none;
+		width: 22px;
+		height: 22px;
+		margin-right: 0;
+		display: flex;
+		position: absolute;
+		top: 16px;
+		left: 4px;
+		z-index: 1;
 	}
 	.product__image {
 		width: 80px;
@@ -186,12 +190,6 @@
 	}
 	.product__information {
 		position: relative;
-	}
-	.product__mobileCheckbox {
-		display: flex;
-		position: absolute;
-		top: 4px;
-		left: 4px;
 	}
 	.product__mobileSize {
 		position: absolute;
