@@ -8,7 +8,7 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: end;
-	padding-bottom: 3px;
+	padding-bottom: 2px;
 	border-bottom: 1px solid rgba(var(--secondary-color-rgb), 0.2);
 	color: var(--gray-color);
 	font-size: 16px;
@@ -64,7 +64,7 @@
 	grid-column-gap: 24px;
 }
 
-@media (max-width: 576px) {
+@media (max-width: 768px) {
 	.form {
 		display: flex;
 		flex-direction: column;
@@ -77,9 +77,11 @@
 		gap: 16px;
 	}
 	.form__error {
-		height: 16px;
+		height: 15px;
 	}
-
+	.form__input {
+		height: 37px;
+	}
 	.form__input span {
 		position: relative;
 		pointer-events: none;

@@ -24,11 +24,23 @@
 		width: 100%;
 	}
 }
-@media (max-width: 576px) {
+@media (max-width: 768px) {
 	.orderDetails {
 		margin-top: 0;
 	}
+	.orderDetails__delivery {
+		margin-bottom: 12px;
+	}
+	.orderDetails__payment {
+		margin-bottom: 12px;
+	}
 	.orderDetails__goods_outOfStock {
 		margin-top: 0;
+	}
+	.orderDetails__form {
+		margin-top: 12px;
+	}
+	.orderDetails__customer {
+		padding-bottom: 20px;
 	}
 }

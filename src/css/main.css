@@ -27,10 +27,10 @@
 		justify-content: center;
 	}
 }
-@media (max-width: 576px) {
+@media (max-width: 768px) {
 	.main {
 		padding: 15px 16px 24px 16px;
-		gap: 16px;
+		gap: 15px;
 	}
 	.main__header {
 		top: 0;

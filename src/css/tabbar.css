@@ -5,8 +5,20 @@
 	justify-content: space-between;
 	align-items: center;
 }
+.tabbar__icon {
+	position: relative;
+	width: 28px;
+	height: 29px;
+}
 .tabbar__notification {
 	transform: translate(-0%, -20%);
+}
+.tabbar__notification {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	right: -6px;
+	top: -1px;
 }
 
 @media (max-width: 768px) {

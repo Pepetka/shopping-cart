@@ -39,7 +39,7 @@
 	margin-left: 2px;
 }
 
-@media (max-width: 576px) {
+@media (max-width: 768px) {
 	.counter {
 		width: 80px;
 		height: 32px;

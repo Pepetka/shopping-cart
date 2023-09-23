@@ -6,7 +6,7 @@
 .payment__method {
 	display: flex;
 	flex-direction: column;
-	gap: 3px;
+	gap: 4px;
 }
 .payment__immediately {
 	height: 66px;
@@ -19,7 +19,7 @@
 	background: var(--bg-smoky);
 }
 
-@media (max-width: 576px) {
+@media (max-width: 768px) {
 	.payment__method {
 		display: none;
 	}

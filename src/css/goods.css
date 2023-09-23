@@ -57,7 +57,7 @@
 	top: -2px;
 }
 
-@media (max-width: 576px) {
+@media (max-width: 768px) {
 	.goods__toggle {
 		margin-right: 5px;
 	}

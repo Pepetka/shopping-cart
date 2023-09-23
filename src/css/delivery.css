@@ -1,30 +1,30 @@
 .delivery {
 	display: flex;
 	flex-direction: column;
-	gap: 12px;
-}
-.delivery__method .method__change {
-	margin-top: 3px;
+	gap: 13px;
 }
 .delivery__details {
 	width: 100%;
-	margin-block: -1px 1px;
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
 	gap: 4px;
-}
-.delivery__address {
-	margin-top: 2px;
 }
 .delivery__date {
 	box-sizing: content-box;
 	color: var(--accent-color);
 	border-bottom: 1px dashed rgba(var(--accent-color-rgb), 0.2);
 }
+.delivery__name {
+	position: relative;
+	top: -1px;
+}
 
-@media (max-width: 576px) {
+@media (max-width: 768px) {
 	.delivery__information {
 		background: var(--bg-smoky-dark);
+	}
+	.delivery__details {
+		display: none;
 	}
 }

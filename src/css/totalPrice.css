@@ -1,8 +1,7 @@
 .totalPrice {
 	display: flex;
 	flex-direction: column;
-	gap: 7px;
-	padding-bottom: 1px;
+	gap: 6px;
 }
 .totalPrice__total {
 	display: flex;
@@ -20,7 +19,7 @@
 	font-size: 24px;
 	font-style: normal;
 	font-weight: 700;
-	line-height: 32px;
+	line-height: 33px;
 	letter-spacing: -0.24px;
 }
 .totalPrice__price_small {
@@ -28,11 +27,16 @@
 	line-height: 24px;
 }
 .totalPrice__price span {
+	position: relative;
+	bottom: 1px;
 	font-size: 20px;
 	font-style: normal;
 	font-weight: 700;
 	line-height: 28px;
 	letter-spacing: -0.2px;
+}
+.totalPrice__detailsWrapper {
+	margin-bottom: 2px;
 }
 .totalPrice__detail {
 	display: flex;
@@ -40,4 +44,21 @@
 	align-items: center;
 	font-size: 16px;
 	line-height: 24px;
+}
+
+@media (max-width: 768px) {
+	.totalPrice__total {
+		font-size: 20px;
+		font-style: normal;
+		font-weight: 700;
+		line-height: 28px;
+		letter-spacing: -0.2px;
+	}
+	.totalPrice__price {
+		font-size: 20px;
+		font-style: normal;
+		font-weight: 700;
+		line-height: 28px;
+		letter-spacing: -0.2px;
+	}
 }
