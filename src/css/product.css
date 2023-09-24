@@ -84,7 +84,7 @@
 }
 .product__buttons {
 	height: 20px;
-	display: flex;
+	display: none;
 	gap: 16px;
 	justify-content: end;
 	align-items: start;
@@ -92,6 +92,22 @@
 .product__buttons > img {
 	width: 20px;
 	height: 20px;
+}
+.product__favorite {
+	background: url("../assets/icons/Favorite.svg");
+	width: 20px;
+	height: 20px;
+}
+.product__favorite:hover {
+	background: url("../assets/icons/Favorite_hover.svg");
+}
+.product__delete {
+	background: url("../assets/icons/Basket.svg");
+	width: 20px;
+	height: 20px;
+}
+.product__delete:hover {
+	background: url("../assets/icons/Basket_hover.svg");
 }
 .product__details_outOfStock {
 	max-width: 309px;
@@ -105,6 +121,9 @@
 }
 .product__mobileSize {
 	display: none;
+}
+.product:hover .product__buttons {
+	display: flex;
 }
 
 @media (max-width: 768px) {

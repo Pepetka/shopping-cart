@@ -40,6 +40,10 @@
 .goods__toggle img {
 	width: 20px;
 	height: 20px;
+	transition: transform 0.2s linear;
+}
+.goods__toggle_rotate img {
+	transform: rotate(180deg);
 }
 .goods__list {
 	height: auto;
@@ -52,9 +56,18 @@
 .goods__list_outOfStock {
 	gap: 20px;
 }
-.goods__header_outOfStock span {
+.goods__header_outOfStock > span {
 	position: relative;
 	top: -2px;
+}
+.goods__header_normal > span {
+	display: none;
+}
+.goods__header_close > span {
+	display: block;
+}
+.goods__header_close .goods__checkbox {
+	display: none;
 }
 
 @media (max-width: 768px) {

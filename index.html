@@ -8,7 +8,7 @@
 	<title>Document</title>
 	<link>
 	<link rel="stylesheet" type="text/css" href="./src/css/index.css">
-	<script src="./src/js/index.js" defer></script>
+	<script type="module" src="src/ts/index.ts" defer></script>
 </head>
 <body>
 	<header class="header">
@@ -51,11 +51,13 @@
 			<h1 class="main__header">Корзина</h1>
 
 			<div class="goods orderDetails__goods">
-				<div class="goods__header">
+				<div class="goods__header goods__header_normal">
 					<label class="checkbox goods__checkbox">
 						<input data-product-list-checkbox type="checkbox" checked />
 						<span>Выбрать все</span>
 					</label>
+
+					<span>266 товаров · 2 100 569 сом</span>
 
 					<button data-accordion="normal" class="goods__toggle">
 						<img src="./src/assets/icons/Arrow.svg" alt="Toggle list" />
@@ -127,8 +129,8 @@
 										Осталось 2 шт.
 									</div>
 									<div class="product__buttons">
-										<button><img src="./src/assets/icons/Favorite.svg" alt="Add to favorites" /></button>
-										<button><img src="./src/assets/icons/Basket.svg" alt="Delete" /></button>
+										<button class="product__favorite"></button>
+										<button class="product__delete"></button>
 									</div>
 								</div>
 
@@ -199,8 +201,8 @@
 										</button>
 									</div>
 									<div class="product__buttons">
-										<button><img src="./src/assets/icons/Favorite.svg" alt="Add to favorites" /></button>
-										<button><img src="./src/assets/icons/Basket.svg" alt="Delete" /></button>
+										<button class="product__favorite"></button>
+										<button class="product__delete"></button>
 									</div>
 								</div>
 
@@ -270,8 +272,8 @@
 										Осталось 2 шт.
 									</div>
 									<div class="product__buttons">
-										<button><img src="./src/assets/icons/Favorite.svg" alt="Add to favorites" /></button>
-										<button><img src="./src/assets/icons/Basket.svg" alt="Delete" /></button>
+										<button class="product__favorite"></button>
+										<button class="product__delete"></button>
 									</div>
 								</div>
 
@@ -327,8 +329,8 @@
 							<div>
 								<div class="product__controls">
 									<div class="product__buttons product__buttons_outOfStock">
-										<button><img src="./src/assets/icons/Favorite.svg" alt="Add to favorites" /></button>
-										<button><img src="./src/assets/icons/Basket.svg" alt="Delete" /></button>
+										<button class="product__favorite"></button>
+										<button class="product__delete"></button>
 									</div>
 								</div>
 
@@ -358,8 +360,8 @@
 							<div>
 								<div class="product__controls">
 									<div class="product__buttons product__buttons_outOfStock">
-										<button><img src="./src/assets/icons/Favorite.svg" alt="Add to favorites" /></button>
-										<button><img src="./src/assets/icons/Basket.svg" alt="Delete" /></button>
+										<button class="product__favorite"></button>
+										<button class="product__delete"></button>
 									</div>
 								</div>
 
@@ -385,8 +387,8 @@
 							<div>
 								<div class="product__controls">
 									<div class="product__buttons product__buttons_outOfStock">
-										<button><img src="./src/assets/icons/Favorite.svg" alt="Add to favorites" /></button>
-										<button><img src="./src/assets/icons/Basket.svg" alt="Delete" /></button>
+										<button class="product__favorite"></button>
+										<button class="product__delete"></button>
 									</div>
 								</div>
 
