@@ -8,6 +8,11 @@ import {Product} from "../types/products.ts";
 import {fixProductsNum} from "../helpers/fixProductsNum.ts";
 import {fixProductPrice} from "../helpers/fixPrice.ts";
 import {getProductsNumMod} from "../helpers/getProductsNumMod.ts";
+import {fixOutOfStockNum} from "../helpers/fixOutOfStockNum.ts";
+import {fixTotalNumTotalPrice} from "../helpers/fixTotalNumTotalPrice.ts";
+import {userCardModal} from "./templates/userCardModal.ts";
+import {userCardMethod} from "./templates/userCardMethod.ts";
+import {userCardTotal} from "./templates/userCardTotal.ts";
 
 let products = productsMock;
 let ids = products.map(({ id }) => id);
@@ -18,6 +23,7 @@ const productsNum: Record<string, number> = {
 	'product3': 2,
 };
 let selectedProducts: string[] = [];
+let selectedCard = 'card1';
 
 let productsFavorite: (Product | Pick<Product, 'id' | 'name' | 'img' | 'options'>)[] = [];
 
@@ -215,14 +221,44 @@ const deleteFavoriteProductsOOS = (productsElements: HTMLCollectionOf<HTMLDivEle
 	});
 };
 
-const fixOutOfStockNum = (num: number) => {
-	const outOfStockHeader = document.querySelector('.goods__header_outOfStock > span')!;
-	outOfStockHeader.textContent = `Отсутствуют · ${num} товара`;
-};
+const openModal = (modal: HTMLElement) => {
+	modal.classList.remove('modal_hide');
+	document.body.style.overflowY = 'hidden';
+}
 
-const fixTotalNumTotalPrice = (num: number, totalPrice: number, currency: string) => {
-	const normalHeader = document.querySelector('.goods__header_normal > span')!;
-	normalHeader.textContent = `${num} товаров · ${totalPrice.toLocaleString('ru')} ${currency}`;
+const closeModal = (element: HTMLElement, selectedCard: string) => {
+	const modal: HTMLDivElement = element.closest('.modal')!;
+	modal.classList.add('modal_hide');
+	document.body.style.overflowY = 'auto';
+
+	userCardMethod(selectedCard);
+	userCardTotal(selectedCard);
+}
+
+const openCloseModals = () => {
+	const modals = document.querySelectorAll<HTMLDivElement>('.modal');
+	const modalButtons = document.querySelectorAll<HTMLButtonElement>('button[data-modal]');
+
+	modalButtons.forEach((button) => {
+		const modalType = button.dataset['modal'];
+
+		button.addEventListener('click', () => {
+			modals.forEach((modal) => {
+				if (modal.dataset['modal'] !== modalType) return;
+
+				openModal(modal);
+			});
+		});
+	});
+
+	const closeModals = document.querySelectorAll<HTMLDivElement>('.modal__overlay, .modal__close');
+	closeModals.forEach((close) => {
+		close.addEventListener('click', (event) => {
+			event.stopPropagation();
+
+			closeModal(close, selectedCard);
+		});
+	});
 };
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -240,6 +276,10 @@ document.addEventListener('DOMContentLoaded', () => {
 		products[0].currency,
 	);
 
+	userCardModal(selectedCard);
+	userCardMethod(selectedCard);
+	userCardTotal(selectedCard);
+
 	// показ/скрытие списков товаров
 	productAccordion();
 
@@ -251,5 +291,40 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	// удаление/добавление в избранное товаров
 	deleteFavoriteProducts(productsElements);
-	deleteFavoriteProductsOOS(productsOutOfStockElements)
+	deleteFavoriteProductsOOS(productsOutOfStockElements);
+
+	// открытие/закрытие модальных окон
+	openCloseModals();
+
+	// выбор карты оплаты
+	const paymentForm: HTMLFormElement = document.querySelector('[data-modal="payment"] .paymentForm')!;
+	paymentForm.addEventListener('submit', (event) => {
+		event.preventDefault();
+
+		const formData = new FormData(event.target as HTMLFormElement);
+		const formProps = Object.fromEntries(formData) as { card: string };
+
+		selectedCard = formProps.card;
+		closeModal(paymentForm, selectedCard);
+	});
+
+	// оплатить сразу
+	const payImmediately: HTMLInputElement = document.querySelector('.payment__immediately input')!;
+	const immediatelyAdditions = document.querySelectorAll<HTMLDivElement>('.payment__immediately span, .card__additional');
+
+	payImmediately.addEventListener('click', () => {
+		const totalButton: HTMLButtonElement = document.querySelector('.total__button')!;
+
+		if (payImmediately.checked) {
+			immediatelyAdditions.forEach((additions) => {
+				additions.classList.add('hide');
+				totalButton.textContent = 'Оплатить 1 016 сом';
+			});
+		} else {
+			immediatelyAdditions.forEach((additions) => {
+				additions.classList.remove('hide');
+				totalButton.textContent = 'Заказать';
+			});
+		}
+	});
 });

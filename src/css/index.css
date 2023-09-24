@@ -1,6 +1,7 @@
 @import url('../assets/fonts/stylesheet.css');
 @import url('./accordion.css');
 @import url('./address.css');
+@import url('./addressForm.css');
 @import url('./card.css');
 @import url('./checkbox.css');
 @import url('./counter.css');
@@ -13,12 +14,15 @@
 @import url('./information.css');
 @import url('./main.css');
 @import url('./method.css');
+@import url('./modal.css');
 @import url('./notification.css');
 @import url('./orderDetails.css');
 @import url('./payment.css');
 @import url('./paymentCard.css');
+@import url('./paymentForm.css');
 @import url('./price.css');
 @import url('./product.css');
+@import url('./radio.css');
 @import url('./search.css');
 @import url('./tabbar.css');
 @import url('./total.css');
@@ -61,8 +65,12 @@
 	--confirmed-color-rgb: 12, 180, 119;
 	--gray-color: #9797AF;
 	--gray-color-rgb: 151, 151, 175;
+	--light-gray-color: #A0A0A4;
+	--light-gray-color-rgb: 160, 160, 164;
 	--dark-system-coral: #FF3B30;
 	--dark-system-coral-rgb: 255, 59, 48;
+
+	--overlay-color: rgba(5, 0, 10, 0.30);;
 
 	font-family: "Segoe UI", sans-serif;
 	font-size: 13px;
@@ -95,4 +103,7 @@ input:focus {
 }
 a {
 	cursor: pointer;
+}
+.hide {
+	display: none;
 }

@@ -1,0 +1,23 @@
+.paymentForm {
+	height: 408px;
+	width: 400px;
+}
+.paymentForm__body {
+	padding-inline: 22px;
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+}
+.paymentForm__radio {
+	align-items: center;
+}
+
+@media (max-width: 576px) {
+	.paymentForm__body {
+		padding-inline: 16px;
+	}
+	.paymentForm {
+		height: 100%;
+		width: 100%;
+	}
+}

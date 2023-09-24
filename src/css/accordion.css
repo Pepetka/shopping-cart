@@ -6,3 +6,13 @@
 .accordion__close {
 	grid-template-rows: 0fr;
 }
+.accordion__close .goods__list_normal {
+	margin-bottom: 16px;
+}
+.goods__header_outOfStock:has( + .accordion__close) {
+	padding-bottom: 0;
+}
+.goods__header_outOfStock:has( + .accordion__close):after {
+	width: 0;
+	height: 0;
+}

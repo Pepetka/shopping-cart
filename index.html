@@ -403,7 +403,7 @@
 			<div class="card orderDetails__delivery">
 				<div class="card__header">
 					<span>Способ доставки</span>
-					<button class="card__change">Изменить</button>
+					<button data-modal="address" class="card__change">Изменить</button>
 				</div>
 
 				<div class="card__content">
@@ -468,18 +468,20 @@
 			<div class="card orderDetails__payment">
 				<div class="card__header">
 					<span>Способ оплаты</span>
-					<button class="card__change">Изменить</button>
+					<button data-modal="payment" class="card__change">Изменить</button>
 				</div>
 
-				<div class="paymentCard orderDetails__card">
-					<img class="paymentCard__paymentSystem" src="./src/assets/icons/Cards/Mir.svg" alt="Payment system" />
-					<span class="paymentCard__number">
+				<div class="orderDetails__cardWrapper">
+					<div class="paymentCard orderDetails__card">
+						<img class="paymentCard__paymentSystem" src="./src/assets/icons/Cards/Mir.svg" alt="Payment system" />
+						<span class="paymentCard__number">
 						<span>1234 12•• •••• 1234</span>
 						<span>01/30</span>
 					</span>
+					</div>
 				</div>
 
-				<div class="card__additional">
+				<div class="card__additional orderDetails__additional">
 					Спишем оплату с карты при получении
 				</div>
 			</div>
@@ -585,7 +587,7 @@
 							Доставка в пункт выдачи
 						</div>
 
-						<button class="method__change">
+						<button data-modal="address" class="method__change">
 							<img src="./src/assets/icons/Edit.svg" alt="Change delivery method" />
 						</button>
 					</div>
@@ -615,14 +617,16 @@
 							Оплата картой
 						</div>
 
-						<button class="method__change">
+						<button data-modal="payment" class="method__change">
 							<img src="./src/assets/icons/Edit.svg" alt="Change delivery method" />
 						</button>
 					</div>
 
-					<div class="paymentCard payment__card">
-						<img class="paymentCard__paymentSystem" src="./src/assets/icons/Cards/Mir.svg" alt="Payment system" />
-						<span class="paymentCard__number">1234 12•• •••• 1234</span>
+					<div class="payment__cardWrapper">
+						<div class="paymentCard payment__card">
+							<img class="paymentCard__paymentSystem" src="./src/assets/icons/Cards/Mir.svg" alt="Payment system" />
+							<span class="paymentCard__number">1234 12•• •••• 1234</span>
+						</div>
 					</div>
 				</div>
 
@@ -631,7 +635,7 @@
 						<input type="checkbox" />
 						Списать оплату сразу
 					</label>
-					Спишем оплату с карты при получении
+					<span>Спишем оплату с карты при получении</span>
 				</div>
 			</div>
 
@@ -675,5 +679,144 @@
 			<img src="./src/assets/icons/Profile_gray.svg" alt="Profile">
 		</a>
 	</nav>
+
+	<div data-modal="payment" class="modal modal_hide">
+		<div class="modal__overlay"></div>
+
+		<form class="paymentForm modal__content">
+			<div class="modal__header">
+				<div class="modal__name">
+					Способ оплаты
+				</div>
+
+				<button type="button" class="modal__close">
+					<img src="./src/assets/icons/Close.svg" alt="Close modal" />
+				</button>
+			</div>
+
+			<div class="paymentForm__body modal__body">
+				<label class="radio paymentForm__radio">
+					<input type="radio" value="mir" name="card" checked>
+					<span class="paymentCard modal__paymentCard">
+						<img class="paymentCard__paymentSystem" src="./src/assets/icons/Cards/Mir.svg" alt="Payment system" />
+						<span class="paymentCard__number">1234 56•• •••• 1234</span>
+					</span>
+				</label>
+
+				<label class="radio paymentForm__radio">
+					<input type="radio" value="visa" name="card">
+					<span class="paymentCard modal__paymentCard">
+						<img class="paymentCard__paymentSystem" src="./src/assets/icons/Cards/Visa.svg" alt="Payment system" />
+						<span class="paymentCard__number">1234 56•• •••• 1234</span>
+					</span>
+				</label>
+
+				<label class="radio paymentForm__radio">
+					<input type="radio" value="mastercard" name="card">
+					<span class="paymentCard modal__paymentCard">
+						<img class="paymentCard__paymentSystem" src="./src/assets/icons/Cards/Mastercard.svg" alt="Payment system" />
+						<span class="paymentCard__number">1234 56•• •••• 1234</span>
+					</span>
+				</label>
+
+				<label class="radio paymentForm__radio">
+					<input type="radio" value="maestro" name="card">
+					<span class="paymentCard modal__paymentCard">
+						<img class="paymentCard__paymentSystem" src="./src/assets/icons/Cards/Maestro.svg" alt="Payment system" />
+						<span class="paymentCard__number">1234 56•• •••• 1234</span>
+					</span>
+				</label>
+			</div>
+
+			<div class="modal__button">
+				<button type="submit">Выбрать</button>
+			</div>
+		</form>
+	</div>
+
+	<div data-modal="address" class="modal modal_hide">
+		<div class="modal__overlay"></div>
+
+		<form class="addressForm modal__content">
+			<div class="modal__header">
+				<div class="modal__name">
+					Способ доставки
+				</div>
+
+				<button type="button" class="modal__close">
+					<img src="./src/assets/icons/Close.svg" alt="Close modal" />
+				</button>
+			</div>
+
+			<div class="addressForm__body modal__body">
+				<div class="modal__tabs">
+					<button type="button" disabled>В пункт выдачи</button>
+					<button type="button">Курьером</button>
+				</div>
+
+				<fieldset>
+					<legend>Мои адреса</legend>
+
+					<div class="modal__line">
+						<label class="radio addressForm__radio">
+							<input type="radio" value="mir" name="address" checked>
+							<span>
+									<span class="addressForm__address">Бишкек, улица Табышалиева, 57</span>
+									<span class="addressForm__rating">
+										<span>
+											<img src="./src/assets/icons/Star.svg" alt="Star" />
+											4.99
+										</span>
+										Пункт выдачи
+									</span>
+								</span>
+						</label>
+
+						<button type="button"></button>
+					</div>
+
+					<div class="modal__line">
+						<label class="radio addressForm__radio">
+							<input type="radio" value="mir" name="address">
+							<span>
+									<span class="addressForm__address">Бишкек, улица Жукеева-Пудовкина, 77/1</span>
+									<span class="addressForm__rating">
+										<span>
+											<img src="./src/assets/icons/Star.svg" alt="Star" />
+											4.99
+										</span>
+										Пункт выдачи
+									</span>
+								</span>
+						</label>
+
+						<button type="button"></button>
+					</div>
+
+					<div class="modal__line addressForm__radio">
+						<label class="radio">
+							<input type="radio" value="mir" name="address">
+							<span>
+									<span class="addressForm__address">Бишкек, микрорайон Джал, улица Ахунбаева Исы, 67/1</span>
+									<span class="addressForm__rating">
+										<span>
+											<img src="./src/assets/icons/Star.svg" alt="Star" />
+											4.99
+										</span>
+										Пункт выдачи
+									</span>
+								</span>
+						</label>
+
+						<button type="button"></button>
+					</div>
+				</fieldset>
+			</div>
+
+			<div class="modal__button">
+				<button type="submit">Выбрать</button>
+			</div>
+		</form>
+	</div>
 </body>
 </html>

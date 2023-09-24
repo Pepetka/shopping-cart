@@ -1,0 +1,32 @@
+.radio {
+	display: grid;
+	grid-column-gap: 8px;
+	grid-template-columns: 20px 1fr;
+	cursor: pointer;
+}
+.radio input {
+	width: 20px;
+}
+.radio:before {
+	content: " ";
+	height: 20px;
+	width: 20px;
+	background: url("../assets/icons/Radio.svg") var(--content-bg-color);
+	border-radius: 20px;
+	position: relative;
+	top: 2px;
+	cursor: pointer;
+}
+.radio:has(> input:checked):before {
+	content: " ";
+	height: 20px;
+	width: 20px;
+	background: url("../assets/icons/Radio_checked.svg") var(--content-bg-color);
+	border-radius: 20px;
+	position: relative;
+	top: 2px;
+	cursor: pointer;
+}
+.radio input {
+	display: none;
+}
