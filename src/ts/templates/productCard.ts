@@ -1,5 +1,5 @@
 import {Product} from "../../types/products.ts";
-import {getOptions} from "../../helpers/getOptions.ts";
+import {getOptions} from "../helpers/getOptions.ts";
 import informationSVG from "../../assets/icons/Information.svg";
 
 export const productCardTemplate = ({ id, name, img, price, currency, prevPrice, options, company, totalQuantity }: Product, quantity: number) => {

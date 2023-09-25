@@ -5,14 +5,19 @@ import {renderProducts} from "./render/renderProducts.ts";
 import {renderOutOfStockProducts} from "./render/renderOutOfStockProducts.ts";
 import {renderMiniProducts} from "./render/renderMiniProducts.ts";
 import {Product} from "../types/products.ts";
-import {fixProductsNum} from "../helpers/fixProductsNum.ts";
-import {fixProductPrice} from "../helpers/fixPrice.ts";
-import {getProductsNumMod} from "../helpers/getProductsNumMod.ts";
-import {fixOutOfStockNum} from "../helpers/fixOutOfStockNum.ts";
-import {fixTotalNumTotalPrice} from "../helpers/fixTotalNumTotalPrice.ts";
-import {userCardModal} from "./templates/userCardModal.ts";
-import {userCardMethod} from "./templates/userCardMethod.ts";
-import {userCardTotal} from "./templates/userCardTotal.ts";
+import {fixProductsNum} from "./fixes/fixProductsNum.ts";
+import {fixProductPrice} from "./fixes/fixPrice.ts";
+import {getProductsNumMod} from "./helpers/getProductsNumMod.ts";
+import {fixOutOfStockNum} from "./fixes/fixOutOfStockNum.ts";
+import {fixTotalNumTotalPrice} from "./fixes/fixTotalNumTotalPrice.ts";
+import {renderUserCardModal} from "./render/renderUserCardModal.ts";
+import {renderUserCardMethod} from "./render/renderUserCardMethod.ts";
+import {renderUserCardTotal} from "./render/renderUserCardTotal.ts";
+import {getScrollbarWidth} from "./helpers/getScrollbarWidth.ts";
+import {renderUserAddressModal} from "./render/renderUserAddressModal.ts";
+import {renderUserAddressMethod} from "./render/renderUserAddressMethod.ts";
+import {renderUserAddressTotal} from "./render/renderUserAddressTotal.ts";
+import {Address} from "../types/address.ts";
 
 let products = productsMock;
 let ids = products.map(({ id }) => id);
@@ -24,6 +29,7 @@ const productsNum: Record<string, number> = {
 };
 let selectedProducts: string[] = [];
 let selectedCard = 'card1';
+let selectedAddress = 'userAddress2';
 
 let productsFavorite: (Product | Pick<Product, 'id' | 'name' | 'img' | 'options'>)[] = [];
 
@@ -224,15 +230,23 @@ const deleteFavoriteProductsOOS = (productsElements: HTMLCollectionOf<HTMLDivEle
 const openModal = (modal: HTMLElement) => {
 	modal.classList.remove('modal_hide');
 	document.body.style.overflowY = 'hidden';
+	document.body.style.marginRight = `${getScrollbarWidth()}px`;
 }
 
-const closeModal = (element: HTMLElement, selectedCard: string) => {
+const closeModal = (element: HTMLElement, { selectedCard, selectedAddress }: { selectedCard?: string, selectedAddress?: string }) => {
 	const modal: HTMLDivElement = element.closest('.modal')!;
 	modal.classList.add('modal_hide');
 	document.body.style.overflowY = 'auto';
+	document.body.style.marginRight = '0';
 
-	userCardMethod(selectedCard);
-	userCardTotal(selectedCard);
+	if (selectedCard) {
+		renderUserCardMethod(selectedCard);
+		renderUserCardTotal(selectedCard);
+	}
+	if (selectedAddress) {
+		renderUserAddressMethod(selectedAddress);
+		renderUserAddressTotal(selectedAddress);
+	}
 }
 
 const openCloseModals = () => {
@@ -256,7 +270,92 @@ const openCloseModals = () => {
 		close.addEventListener('click', (event) => {
 			event.stopPropagation();
 
-			closeModal(close, selectedCard);
+			closeModal(close, { selectedCard, selectedAddress });
+		});
+	});
+};
+
+const selectPaymentCard = () => {
+	const paymentForm: HTMLFormElement = document.querySelector('[data-modal="payment"] .paymentForm')!;
+	paymentForm.addEventListener('submit', (event) => {
+		event.preventDefault();
+
+		const formData = new FormData(paymentForm);
+		const formProps = Object.fromEntries(formData) as { card: string };
+
+		selectedCard = formProps.card;
+		closeModal(paymentForm, { selectedCard });
+	});
+};
+
+const payImmediately = () => {
+	const payImmediately: HTMLInputElement = document.querySelector('.payment__immediately input')!;
+	const immediatelyAdditions = document.querySelectorAll<HTMLDivElement>('.payment__immediately span, .card__additional');
+
+	payImmediately.addEventListener('click', () => {
+		const totalButton: HTMLButtonElement = document.querySelector('.total__button')!;
+
+		if (payImmediately.checked) {
+			immediatelyAdditions.forEach((additions) => {
+				additions.classList.add('hide');
+				totalButton.textContent = 'Оплатить 1 016 сом';
+			});
+		} else {
+			immediatelyAdditions.forEach((additions) => {
+				additions.classList.remove('hide');
+				totalButton.textContent = 'Заказать';
+			});
+		}
+	});
+};
+
+const selectAddress = () => {
+	const modalTabs = document.querySelectorAll<HTMLButtonElement>('[data-modal-tab]');
+	modalTabs.forEach((tab) => {
+		const type = (tab.dataset['modalTab'] ?? 'user') as Address['type'];
+
+		tab.addEventListener('click', () => {
+			const modalAddresses = document.querySelectorAll<HTMLDivElement>('[data-address-type]');
+			modalTabs.forEach((element) => {
+				if (element === tab) {
+					element.classList.add('tabs__tab_active');
+				} else {
+					element.classList.remove('tabs__tab_active');
+				}
+			});
+
+			modalAddresses.forEach((address) => {
+				const addressType = address.dataset['addressType'] ?? '';
+
+				if (type === addressType) {
+					address.classList.remove('hide');
+				} else {
+					address.classList.add('hide');
+				}
+			});
+		});
+	});
+
+	const addressForm: HTMLFormElement = document.querySelector('[data-modal="address"] .addressForm')!;
+	addressForm.addEventListener('submit', (event) => {
+		event.preventDefault();
+
+		const formData = new FormData(addressForm);
+		const formProps = Object.fromEntries(formData) as { address: string };
+
+		selectedAddress = formProps.address;
+		closeModal(addressForm, { selectedAddress });
+	});
+};
+
+const deleteAddress = () => {
+	const modalAddresses = document.querySelectorAll<HTMLDivElement>('.modal__line[data-delete-address]');
+
+	modalAddresses.forEach((addressElement) => {
+		const deleteBtn: HTMLButtonElement = addressElement.querySelector('button[data-delete-address]')!;
+
+		deleteBtn.addEventListener('click', () => {
+			addressElement.remove();
 		});
 	});
 };
@@ -276,9 +375,13 @@ document.addEventListener('DOMContentLoaded', () => {
 		products[0].currency,
 	);
 
-	userCardModal(selectedCard);
-	userCardMethod(selectedCard);
-	userCardTotal(selectedCard);
+	renderUserCardModal(selectedCard);
+	renderUserCardMethod(selectedCard);
+	renderUserCardTotal(selectedCard);
+
+	renderUserAddressModal(selectedAddress);
+	renderUserAddressMethod(selectedAddress);
+	renderUserAddressTotal(selectedAddress);
 
 	// показ/скрытие списков товаров
 	productAccordion();
@@ -297,34 +400,15 @@ document.addEventListener('DOMContentLoaded', () => {
 	openCloseModals();
 
 	// выбор карты оплаты
-	const paymentForm: HTMLFormElement = document.querySelector('[data-modal="payment"] .paymentForm')!;
-	paymentForm.addEventListener('submit', (event) => {
-		event.preventDefault();
-
-		const formData = new FormData(event.target as HTMLFormElement);
-		const formProps = Object.fromEntries(formData) as { card: string };
-
-		selectedCard = formProps.card;
-		closeModal(paymentForm, selectedCard);
-	});
+	selectPaymentCard();
 
 	// оплатить сразу
-	const payImmediately: HTMLInputElement = document.querySelector('.payment__immediately input')!;
-	const immediatelyAdditions = document.querySelectorAll<HTMLDivElement>('.payment__immediately span, .card__additional');
+	payImmediately();
 
-	payImmediately.addEventListener('click', () => {
-		const totalButton: HTMLButtonElement = document.querySelector('.total__button')!;
+	// выбор адреса
+	selectAddress();
 
-		if (payImmediately.checked) {
-			immediatelyAdditions.forEach((additions) => {
-				additions.classList.add('hide');
-				totalButton.textContent = 'Оплатить 1 016 сом';
-			});
-		} else {
-			immediatelyAdditions.forEach((additions) => {
-				additions.classList.remove('hide');
-				totalButton.textContent = 'Заказать';
-			});
-		}
-	});
+	// удаление адресов
+	deleteAddress();
 });
+

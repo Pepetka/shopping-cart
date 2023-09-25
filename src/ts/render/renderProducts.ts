@@ -6,7 +6,8 @@ export const renderProducts = (productsNum: Record<string, number>, products: Pr
 	headerNotification.textContent = `${products.length}`;
 
 	const goodsList = document.querySelector('.goods__list_normal')!;
-	goodsList.innerHTML = products.reduce((acc, product) => acc + productCardTemplate(product, productsNum[product.id]), ``);
+	goodsList.innerHTML = products
+		.reduce((acc, product) => acc + productCardTemplate(product, productsNum[product.id]), ``);
 
 	return goodsList.getElementsByClassName('product') as HTMLCollectionOf<HTMLDivElement>;
 };

@@ -1,4 +1,4 @@
-import {Product} from "../types/products.ts";
+import {Product} from "../../types/products.ts";
 
 export const fixProductPrice = (num: number, id: string, {price, prevPrice, currency}: Product) => {
 	const priceElement = document.querySelector(`[data-product=${id}] .product__price`)!;

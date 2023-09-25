@@ -34,9 +34,25 @@
 	flex-direction: column;
 	gap: 24px;
 }
+.addressForm__body fieldset {
+	border: none;
+	width: 100%;
+}
+.addressForm__body > fieldset > legend {
+	margin-bottom: 12px;
+	font-size: 13px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: 16px;
+}
 .addressForm__radio {
 	align-items: flex-start;
 	flex-grow: 1;
+}
+.addressForm__addressesWrapper {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
 }
 
 @media (max-width: 576px) {

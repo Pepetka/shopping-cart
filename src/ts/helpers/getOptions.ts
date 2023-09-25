@@ -1,4 +1,4 @@
-import {Product} from "../types/products.ts";
+import {Product} from "../../types/products.ts";
 
 export const getOptions = (options: Product['options']) => {
 	return options ? (

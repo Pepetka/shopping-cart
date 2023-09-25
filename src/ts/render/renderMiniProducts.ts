@@ -1,13 +1,13 @@
 import {cardProductTemplate} from "../templates/productCardMini.ts";
 import {DataForMin, Product} from "../../types/products.ts";
-import {getProductsNumMod} from "../../helpers/getProductsNumMod.ts";
+import {getProductsNumMod} from "../helpers/getProductsNumMod.ts";
 
 const productsForMinCards = (productsNum: Record<string, number>, products: Product[]) => {
-	const quantities: Record<string, number> = {}; // {[id]: num}
+	const quantities: Record<string, number> = {};
 
 	return products.reduce<DataForMin[]>(
 		(acc, { id, delivery }) => {
-			const newAcc = [ ...acc ]; // [{ start: '5 февраля', end: '6 февраля', products: [{id: 'product1', quantity: 1}] }];
+			const newAcc = [ ...acc ];
 
 			delivery.forEach((deliveryEl) => {
 				const index = newAcc.findIndex((acc) => acc.start === deliveryEl.start && acc.end === deliveryEl.end);
@@ -37,7 +37,7 @@ const productsForMinCards = (productsNum: Record<string, number>, products: Prod
 			});
 		}, []).map((data) => {
 		return { ...data, products: data.products.filter((el) => el.quantity !== 0) }
-	}).filter((data) => data.products.length !== 0)
+	}).filter((data) => data.products.length !== 0);
 };
 
 export const renderMiniProducts = (productsNum: Record<string, number>, selectedProducts: string[], products: Product[]) => {

@@ -1,5 +1,5 @@
 import {Product} from "../../types/products.ts";
-import {getOptions} from "../../helpers/getOptions.ts";
+import {getOptions} from "../helpers/getOptions.ts";
 
 export const productCardOutOfStockTemplate = ({ id, name, img, options }: Pick<Product, 'id' | 'name' | 'img' | 'options'>) => {
 	return `

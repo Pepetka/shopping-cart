@@ -3,4 +3,6 @@ export interface Address {
 	address: string,
 	type: 'user' | 'point',
 	rating?: string;
+	information?: string,
+	price?: string;
 }
