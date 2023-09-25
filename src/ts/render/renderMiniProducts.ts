@@ -1,11 +1,14 @@
 import {cardProductTemplate} from "../templates/productCardMini.ts";
 import {DataForMin, Product} from "../../types/products.ts";
 import {getProductsNumMod} from "../helpers/getProductsNumMod.ts";
+import {store} from "../../store/store.ts";
+import {months} from "../../consts/months.ts";
 
-const productsForMinCards = (productsNum: Record<string, number>, products: Product[]) => {
+export const productsForMinCards = (productsNum: Record<string, number>, products: Product[]) => {
 	const quantities: Record<string, number> = {};
 
-	return products.reduce<DataForMin[]>(
+	return products
+		.reduce<DataForMin[]>(
 		(acc, { id, delivery }) => {
 			const newAcc = [ ...acc ];
 
@@ -37,12 +40,26 @@ const productsForMinCards = (productsNum: Record<string, number>, products: Prod
 			});
 		}, []).map((data) => {
 		return { ...data, products: data.products.filter((el) => el.quantity !== 0) }
-	}).filter((data) => data.products.length !== 0);
+	})
+		.filter((data) => data.products.length !== 0)
+		.map(({ start, end, products }) => {
+			let startMod = `${+start.split('.')[0]} ${months[start.split('.')[1]]}`;
+			let endMod = `${+end.split('.')[0]} ${months[end.split('.')[1]]}`;
+
+			if (startMod.split(' ')[1] === endMod.split(' ')[1]) {
+				startMod = startMod.split(' ')[0];
+			} else {
+				endMod = `<br/>${endMod}`;
+			}
+
+			return { start: startMod, end: endMod, products } as DataForMin;
+		});
 };
 
-export const renderMiniProducts = (productsNum: Record<string, number>, selectedProducts: string[], products: Product[]) => {
-	const productsNumMod = getProductsNumMod(productsNum, selectedProducts);
+export const renderMiniProducts = () => {
+	const productsNumMod = getProductsNumMod(store.productsNum, store.selectedProducts);
 
 	const cardProducts = document.querySelector('.card__products')!;
-	cardProducts.innerHTML = productsForMinCards(productsNumMod, products).reduce((acc, data) => acc + cardProductTemplate(products, data), ``);
+	cardProducts.innerHTML = productsForMinCards(productsNumMod, store.products)
+		.reduce((acc, data) => acc + cardProductTemplate(store.products, data), ``);
 };

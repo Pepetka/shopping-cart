@@ -28,7 +28,7 @@ export const fixTotalSale = (totalPrice: number, totalPrevPrice: number, currenc
 	`;
 };
 
-export const fixTotalDeliveryPrice = (deliveryPrice: number, currency: string) => {
+export const fixTotalDeliveryPrice = (deliveryPrice?: number, currency?: string) => {
 	const deliveryPriceElement: HTMLDivElement = document.querySelector('[data-total-delivery-price]')!;
 	deliveryPriceElement.innerHTML = `
 		Доставка

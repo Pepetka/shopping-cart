@@ -1,10 +1,11 @@
 import {userAddresses} from "../../consts/userAddresses.ts";
 import {userAddressBase} from "../templates/userAddressBase.ts";
+import {store} from "../../store/store.ts";
 
-export const renderUserAddressModal = (selectedAddress: string) => {
+export const renderUserAddressModal = () => {
 	const modalTabs = document.querySelectorAll<HTMLButtonElement>('[data-modal-tab]');
 	const modalAddress: HTMLDivElement = document.querySelector('.addressForm__addressesWrapper')!;
-	const selectedType = userAddresses.find((el) => el.id === selectedAddress)!.type;
+	const selectedType = userAddresses.find((el) => el.id === store.selectedAddress)!.type;
 
 	modalTabs.forEach((tab) => {
 		const type = tab.dataset['modalTab'] ?? '';
@@ -21,7 +22,7 @@ export const renderUserAddressModal = (selectedAddress: string) => {
 			<div data-delete-address="${address.id}" data-address-type="${address.type}" class="modal__line ${selectedType !==
 			 address.type ? 'hide' : ''}">
 				<label class="radio addressForm__radio">
-					<input type="radio" value="${address.id}" name="address" ${address.id === selectedAddress ? 'checked' : ''}>
+					<input type="radio" value="${address.id}" name="address" ${address.id === store.selectedAddress ? 'checked' : ''}>
 					${userAddressBase(address, '', 'addressForm__rating', 'Пункт выдачи')}
 				</label>
 				

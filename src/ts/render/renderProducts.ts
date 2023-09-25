@@ -1,13 +1,13 @@
-import {Product} from "../../types/products.ts";
 import {productCardTemplate} from "../templates/productCard.ts";
+import {fixProductsNum} from "../fixes/fixProductsNum.ts";
+import {store} from "../../store/store.ts";
 
-export const renderProducts = (productsNum: Record<string, number>, products: Product[]) => {
-	const headerNotification = document.querySelector('.header__notification')!;
-	headerNotification.textContent = `${products.length}`;
-
+export const renderProducts = () => {
 	const goodsList = document.querySelector('.goods__list_normal')!;
-	goodsList.innerHTML = products
-		.reduce((acc, product) => acc + productCardTemplate(product, productsNum[product.id]), ``);
+	goodsList.innerHTML = store.products
+		.reduce((acc, product) => acc + productCardTemplate(product, store.productsNum[product.id]), ``);
+
+	fixProductsNum();
 
 	return goodsList.getElementsByClassName('product') as HTMLCollectionOf<HTMLDivElement>;
 };

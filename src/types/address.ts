@@ -4,5 +4,6 @@ export interface Address {
 	type: 'user' | 'point',
 	rating?: string;
 	information?: string,
-	price?: string;
+	price?: number;
+	currency: 'сом';
 }
