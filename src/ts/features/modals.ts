@@ -3,7 +3,6 @@ import {renderUserCardMethod} from "../render/renderUserCardMethod.ts";
 import {renderUserCardTotal} from "../render/renderUserCardTotal.ts";
 import {renderUserAddressMethod} from "../render/renderUserAddressMethod.ts";
 import {renderUserAddressTotal} from "../render/renderUserAddressTotal.ts";
-import {store} from "../../store/store.ts";
 
 export const openModal = (modal: HTMLElement) => {
 	modal.classList.remove('modal_hide');
@@ -11,17 +10,18 @@ export const openModal = (modal: HTMLElement) => {
 	document.body.style.marginRight = `${getScrollbarWidth()}px`;
 }
 
-export const closeModal = (element: HTMLElement, { selectedCard, selectedAddress }: { selectedCard?: string, selectedAddress?: string }) => {
+export const closeModal = (element: HTMLElement) => {
 	const modal: HTMLDivElement = element.closest('.modal')!;
+	const type = modal.dataset['modal'] ?? '';
+
 	modal.classList.add('modal_hide');
 	document.body.style.overflowY = 'auto';
 	document.body.style.marginRight = '0';
 
-	if (selectedCard) {
+	if (type === 'payment') {
 		renderUserCardMethod();
 		renderUserCardTotal();
-	}
-	if (selectedAddress) {
+	} else {
 		renderUserAddressMethod();
 		renderUserAddressTotal();
 	}
@@ -48,7 +48,7 @@ export const openCloseModals = () => {
 		close.addEventListener('click', (event) => {
 			event.stopPropagation();
 
-			closeModal(close, { selectedCard: store.selectedCard, selectedAddress: store.selectedAddress });
+			closeModal(close);
 		});
 	});
 };

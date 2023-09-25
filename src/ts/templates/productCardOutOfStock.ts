@@ -3,7 +3,7 @@ import {getOptions} from "../helpers/getOptions.ts";
 
 export const productCardOutOfStockTemplate = ({ id, name, img, options }: Pick<Product, 'id' | 'name' | 'img' | 'options'>) => {
 	return `
-		<div data-product-out-of-stock="${id}" class="product goods__product">
+		<div data-product="${id}" class="product goods__product">
 			<div>
 				<div class="product__information">
 					${options?.['Размер'] ? (

@@ -6,7 +6,7 @@ import {fixTotalPrev, fixTotalPrice, fixTotalSale} from "../fixes/fixTotal.ts";
 
 export const productCheckboxes = () => {
 	const allCheckbox: HTMLInputElement = document.querySelector('[data-product-list-checkbox]')!;
-	const productCards: NodeListOf<HTMLElement> = document.querySelectorAll('[data-product]');
+	const productCards: NodeListOf<HTMLElement> = document.querySelectorAll('[data-product]:has(.checkbox)');
 
 	fixCheckboxChecked(store.selectedProducts);
 	renderMiniProducts();
@@ -22,12 +22,12 @@ export const productCheckboxes = () => {
 				store.removeSelectedProducts(id);
 			}
 
-			allCheckbox.checked = store.selectedProducts.length >= store.ids.length;
+			allCheckbox.checked = store.selectedProducts.length === store.ids.length;
 			renderMiniProducts();
 			fixDeliveryDate();
-			fixTotalPrice(store.getTotalPrice(), store.currency);
-			fixTotalPrev(store.getTotalNum(), store.getTotalPrevPrice(), store.currency);
-			fixTotalSale(store.getTotalPrice(), store.getTotalPrevPrice(), store.currency);
+			fixTotalPrice();
+			fixTotalPrev();
+			fixTotalSale();
 		});
 	});
 
@@ -45,8 +45,8 @@ export const productCheckboxes = () => {
 
 		renderMiniProducts();
 		fixDeliveryDate();
-		fixTotalPrice(store.getTotalPrice(), store.currency);
-		fixTotalPrev(store.getTotalNum(), store.getTotalPrevPrice(), store.currency);
-		fixTotalSale(store.getTotalPrice(), store.getTotalPrevPrice(), store.currency);
+		fixTotalPrice();
+		fixTotalPrev();
+		fixTotalSale();
 	});
 };

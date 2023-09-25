@@ -2,9 +2,6 @@
 import {renderProducts} from "./render/renderProducts.ts";
 import {renderOutOfStockProducts} from "./render/renderOutOfStockProducts.ts";
 import {renderMiniProducts} from "./render/renderMiniProducts.ts";
-import {fixProductsNum} from "./fixes/fixProductsNum.ts";
-import {fixOutOfStockNum} from "./fixes/fixOutOfStockNum.ts";
-import {fixTotalNumTotalPrice} from "./fixes/fixTotalNumTotalPrice.ts";
 import {renderUserCardModal} from "./render/renderUserCardModal.ts";
 import {renderUserCardMethod} from "./render/renderUserCardMethod.ts";
 import {renderUserCardTotal} from "./render/renderUserCardTotal.ts";
@@ -14,7 +11,7 @@ import {renderUserAddressTotal} from "./render/renderUserAddressTotal.ts";
 import {productAccordion} from "./features/productAccordion.ts";
 import {productCheckboxes} from "./features/productCheckboxes.ts";
 import {changeProductsQuantity} from "./features/changeProductsQuantity.ts";
-import {deleteFavoriteProducts, deleteFavoriteProductsOOS} from "./features/deleteFavoriteProducts.ts";
+import {deleteFavoriteProducts} from "./features/deleteFavoriteProducts.ts";
 import {openCloseModals} from "./features/modals.ts";
 import {selectPaymentCard} from "./features/selectPaymentCard.ts";
 import {payImmediately} from "./features/payImmediately.ts";
@@ -22,22 +19,20 @@ import {selectAddress} from "./features/selectAddress.ts";
 import {deleteAddress} from "./features/deleteAddress.ts";
 import {fixDeliveryDate} from "./fixes/fixDeliveryDate.ts";
 import {fixTotalPrev, fixTotalPrice, fixTotalSale} from "./fixes/fixTotal.ts";
-import {store} from "../store/store.ts";
+import {userForm} from "./features/userForm.ts";
+import {orderProducts} from "./features/orderProducts.ts";
 
 document.addEventListener('DOMContentLoaded', () => {
 	// отрисовка товаров
-	const productsElements = renderProducts();
-	const productsOutOfStockElements = renderOutOfStockProducts();
+	renderProducts();
+	renderOutOfStockProducts();
 	renderMiniProducts();
 
 	// установка необходимых значений
-	fixProductsNum();
-	fixOutOfStockNum();
-	fixTotalNumTotalPrice();
 	fixDeliveryDate();
-	fixTotalPrice(store.getTotalPrice(), store.currency);
-	fixTotalPrev(store.getTotalNum(), store.getTotalPrevPrice(), store.currency);
-	fixTotalSale(store.getTotalPrice(), store.getTotalPrevPrice(), store.currency);
+	fixTotalPrice();
+	fixTotalPrev();
+	fixTotalSale();
 
 	renderUserCardModal();
 	renderUserCardMethod();
@@ -57,8 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	changeProductsQuantity();
 
 	// удаление/добавление в избранное товаров
-	deleteFavoriteProducts(productsElements);
-	deleteFavoriteProductsOOS(productsOutOfStockElements);
+	deleteFavoriteProducts();
 
 	// открытие/закрытие модальных окон
 	openCloseModals();
@@ -74,5 +68,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	// удаление адресов
 	deleteAddress();
+
+	// работа с формой пользователя
+	userForm();
+
+	// заказать товар
+	orderProducts();
 });
 

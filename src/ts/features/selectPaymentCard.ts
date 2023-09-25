@@ -10,6 +10,6 @@ export const selectPaymentCard = () => {
 		const formProps = Object.fromEntries(formData) as { card: string };
 
 		store.setSelectedCard(formProps.card);
-		closeModal(paymentForm, { selectedCard: store.selectedCard });
+		closeModal(paymentForm);
 	});
 };

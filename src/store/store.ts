@@ -2,32 +2,75 @@ import {productsMock} from "../consts/products.ts";
 import {productsOutOfStockMock} from "../consts/productsOutOfStock.ts";
 import {Product} from "../types/products.ts";
 import {getProductsNumMod} from "../ts/helpers/getProductsNumMod.ts";
+import {Address} from "../types/address.ts";
+import {userAddresses} from "../consts/userAddresses.ts";
+import {UserData} from "../types/userData.ts";
+import {ValidationsError} from "../types/validationErrors.ts";
+import {userCards} from "../consts/userCards.ts";
+import {Card} from "../types/card.ts";
+import {validateField} from "../ts/helpers/validateField.ts";
 
 export class Store {
 	products: Product[];
 	ids: string[];
 	productsOutOfStock: Pick<Product, "id" | "img" | "name" | "options">[];
 	productsNum: Record<string, number>;
+	addresses: Address[];
+	cards: Card[];
 	selectedProducts: string[];
 	selectedCard: string;
 	selectedAddress: string;
 	productsFavorite: (Product | Pick<Product, 'id' | 'name' | 'img' | 'options'>)[];
 	currency: string;
+	payImmediately: boolean;
+	userData: UserData;
+	validationErrors: ValidationsError;
 
 	constructor() {
 		this.products = productsMock;
 		this.ids = this.products.map(({ id }) => id);
 		this.productsOutOfStock = productsOutOfStockMock;
-		this.productsNum = {
-			'product1': 1,
-			'product2': 1,
-			'product3': 1,
-		};
+		this.productsNum = this.ids.reduce((acc, id) => ({ ...acc, [id]: 1 }), {});
+		this.addresses = userAddresses;
+		this.cards = userCards;
 		this.selectedProducts = [];
 		this.selectedCard = 'card1';
 		this.selectedAddress = 'userAddress2';
 		this.productsFavorite = [];
 		this.currency = this.products[0].currency;
+		this.payImmediately = false;
+		this.userData = {
+			name: '',
+			surname: '',
+			email: '',
+			phone: '',
+			INN: '',
+		};
+		this.validationErrors = {
+			name: null,
+			surname: null,
+			email: null,
+			phone: null,
+			INN: null,
+		};
+	}
+
+	getValidationErrors() {
+		Object.entries(this.userData).forEach(([key, value]) => {
+			this.validationErrors[key as keyof UserData] = validateField(key as keyof UserData, value);
+		});
+
+		return this.validationErrors;
+	}
+
+	setUserData(key: string, value: string) {
+		this.userData[key as keyof UserData] = value;
+
+		this.validationErrors[key as keyof UserData] = validateField(key as keyof UserData, value, false);
+	}
+
+	setPayImmediately(flag: boolean) {
+		this.payImmediately = flag;
 	}
 
 	getTotalPrice() {
@@ -102,6 +145,10 @@ export class Store {
 
 	setProductsNum(key: string, value: number) {
 		this.productsNum[key] = value;
+	}
+
+	removeAddress(id: string) {
+		this.addresses = this.addresses.filter((address) => address.id !== id);
 	}
 }
 

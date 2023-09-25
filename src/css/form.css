@@ -46,6 +46,12 @@
 	flex-direction: column;
 	gap: 4px;
 }
+.form__block_error, .form__block_error input {
+	color: var(--notification-color);
+}
+.form__block_error .form__input {
+	border-bottom: 1px solid var(--notification-color);
+}
 .form__error {
 	height: 14px;
 	font-size: 12px;

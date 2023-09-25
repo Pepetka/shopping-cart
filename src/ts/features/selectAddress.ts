@@ -1,14 +1,14 @@
 import {Address} from "../../types/address.ts";
 import {store} from "../../store/store.ts";
 import {closeModal} from "./modals.ts";
+import {fixModalAddressesList} from "../fixes/fixModalAddressesList.ts";
 
-export const selectAddress = () => {
+const selectDeliveryMethod = () => {
 	const modalTabs = document.querySelectorAll<HTMLButtonElement>('[data-modal-tab]');
 	modalTabs.forEach((tab) => {
 		const type = (tab.dataset['modalTab'] ?? 'user') as Address['type'];
 
 		tab.addEventListener('click', () => {
-			const modalAddresses = document.querySelectorAll<HTMLDivElement>('[data-address-type]');
 			modalTabs.forEach((element) => {
 				if (element === tab) {
 					element.classList.add('tabs__tab_active');
@@ -17,18 +17,12 @@ export const selectAddress = () => {
 				}
 			});
 
-			modalAddresses.forEach((address) => {
-				const addressType = address.dataset['addressType'] ?? '';
-
-				if (type === addressType) {
-					address.classList.remove('hide');
-				} else {
-					address.classList.add('hide');
-				}
-			});
+			fixModalAddressesList(type);
 		});
 	});
+};
 
+export const selectAddress = () => {
 	const addressForm: HTMLFormElement = document.querySelector('[data-modal="address"] .addressForm')!;
 	addressForm.addEventListener('submit', (event) => {
 		event.preventDefault();
@@ -37,6 +31,8 @@ export const selectAddress = () => {
 		const formProps = Object.fromEntries(formData) as { address: string };
 
 		store.setSelectedAddress(formProps.address);
-		closeModal(addressForm, { selectedAddress: store.selectedAddress });
+		closeModal(addressForm);
 	});
+
+	selectDeliveryMethod();
 };

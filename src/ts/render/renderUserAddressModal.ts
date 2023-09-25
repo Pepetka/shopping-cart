@@ -1,11 +1,10 @@
-import {userAddresses} from "../../consts/userAddresses.ts";
 import {userAddressBase} from "../templates/userAddressBase.ts";
 import {store} from "../../store/store.ts";
 
 export const renderUserAddressModal = () => {
 	const modalTabs = document.querySelectorAll<HTMLButtonElement>('[data-modal-tab]');
 	const modalAddress: HTMLDivElement = document.querySelector('.addressForm__addressesWrapper')!;
-	const selectedType = userAddresses.find((el) => el.id === store.selectedAddress)!.type;
+	const selectedType = store.addresses.find((el) => el.id === store.selectedAddress)!.type;
 
 	modalTabs.forEach((tab) => {
 		const type = tab.dataset['modalTab'] ?? '';
@@ -17,7 +16,7 @@ export const renderUserAddressModal = () => {
 		}
 	});
 
-	modalAddress.innerHTML = userAddresses
+	modalAddress.innerHTML = store.addresses
 		.reduce((acc, address) => acc + `
 			<div data-delete-address="${address.id}" data-address-type="${address.type}" class="modal__line ${selectedType !==
 			 address.type ? 'hide' : ''}">

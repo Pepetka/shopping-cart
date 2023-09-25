@@ -15,13 +15,13 @@ const change = (id: string, plus: HTMLButtonElement, minus: HTMLButtonElement, q
 	fixProductPrice(store.productsNum[id], id, product);
 	renderMiniProducts();
 	fixDeliveryDate();
-	fixTotalPrice(store.getTotalPrice(), store.currency);
-	fixTotalPrev(store.getTotalNum(), store.getTotalPrevPrice(), store.currency);
-	fixTotalSale(store.getTotalPrice(), store.getTotalPrevPrice(), store.currency);
+	fixTotalPrice();
+	fixTotalPrev();
+	fixTotalSale();
 };
 
 export const changeProductsQuantity = () => {
-	const productCards: NodeListOf<HTMLElement> = document.querySelectorAll('[data-product]');
+	const productCards: NodeListOf<HTMLElement> = document.querySelectorAll('[data-product]:has(.checkbox)');
 
 	productCards.forEach((productElement) => {
 		const id = productElement.dataset['product'] ?? '';

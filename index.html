@@ -495,19 +495,19 @@
 
 				<form class="form orderDetails__form">
 					<div class="form__line1">
-						<div class="form__block">
+						<div data-form-block="name" class="form__block">
 							<label class="form__input">
 								<span>Имя</span>
-								<input type="text" placeholder="" />
+								<input name="name" type="text" placeholder="" />
 							</label>
 
 							<div class="form__error"></div>
 						</div>
 
-						<div class="form__block">
+						<div data-form-block="surname" class="form__block">
 							<label class="form__input">
 								<span>Фамилия</span>
-								<input type="text" placeholder="" />
+								<input name="surname" type="text" placeholder="" />
 							</label>
 
 							<div class="form__error"></div>
@@ -515,28 +515,28 @@
 					</div>
 
 					<div class="form__line2">
-						<div class="form__block">
+						<div data-form-block="email" class="form__block">
 							<label class="form__input">
 								<span>Почта</span>
-								<input type="text" placeholder="" />
+								<input name="email" type="text" placeholder="" />
 							</label>
 
 							<div class="form__error"></div>
 						</div>
 
-						<div class="form__block">
+						<div data-form-block="phone" class="form__block">
 							<label class="form__input">
 								<span>Телефон</span>
-								<input type="text" placeholder="" value="+7 988 123-45-67" />
+								<input name="phone" type="text" placeholder="" />
 							</label>
 
 							<div class="form__error"></div>
 						</div>
 
-						<div class="form__block">
+						<div data-form-block="INN" class="form__block">
 							<label class="form__input">
 								<span>ИНН</span>
-								<input type="text" placeholder="" />
+								<input name="INN" type="text" placeholder="" />
 							</label>
 
 							<div class="form__error">

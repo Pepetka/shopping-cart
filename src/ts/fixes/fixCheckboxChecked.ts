@@ -1,6 +1,6 @@
 export const fixCheckboxChecked = (selectedProducts: string[]) => {
 	const allCheckbox: HTMLInputElement = document.querySelector('[data-product-list-checkbox]')!;
-	const productCards: NodeListOf<HTMLElement> = document.querySelectorAll('[data-product]');
+	const productCards: NodeListOf<HTMLElement> = document.querySelectorAll('[data-product]:has(.checkbox)');
 
 	allCheckbox.checked = true;
 
