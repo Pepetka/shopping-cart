@@ -9,8 +9,8 @@
 	<link>
 	
 	
-  <script type="module" crossorigin src="/shopping-cart/assets/index-c3bf9fc4.js"></script>
-  <link rel="stylesheet" href="/shopping-cart/assets/index-2d8b38f4.css">
+  <script type="module" crossorigin src="/shopping-cart/assets/index-ffe04cbb.js"></script>
+  <link rel="stylesheet" href="/shopping-cart/assets/index-c0a27ceb.css">
 </head>
 <body>
 	<header class="header">
@@ -411,21 +411,23 @@
 				<div class="card__content">
 					<div class="card__line">
 						<div class="card__title">Пункт выдачи</div>
-						<div class="address card__data">
-							<div class="address__data">Бишкек, улица Ахматбека Суюмбаева, 12/1</div>
-							<div class="address__details">
-							<span class="address__rating">
-								<img class="address__star" src="/shopping-cart/assets/Star-be4dc973.svg" alt="Rating" />
-								4.99
+						<div class="card__addressWrapper">
+							<span class="address card__data">
+								<span class="address__data">Бишкек, улица Ахматбека Суюмбаева, 12/1</span>
+								<span class="address__details">
+									<span class="address__rating">
+										<img class="address__star" src="/shopping-cart/assets/Star-be4dc973.svg" alt="Rating" />
+										4.99
+									</span>
+									Ежедневно с 10 до 21
+								</span>
 							</span>
-								Ежедневно с 10 до 21
-							</div>
 						</div>
 					</div>
 
 					<div class="card__line">
 						<div class="card__title">Стоимость доставки</div>
-						<div class="card__data">Бесплатно</div>
+						<div data-delivery-price class="card__data">Бесплатно</div>
 					</div>
 
 					<div class="card__products">
@@ -559,21 +561,21 @@
 				</div>
 
 				<div class="totalPrice__detailsWrapper">
-					<div class="totalPrice__detail">
+					<div data-total-prev class="totalPrice__detail">
 						203 товара
 						<div class="totalPrice__price_small">
 							2 302 048
 							<span>сом</span>
 						</div>
 					</div>
-					<div class="totalPrice__detail">
+					<div data-total-sale class="totalPrice__detail">
 						Скидка
 						<div class="totalPrice__price_small">
 							&minus;200 985
 							<span>сом</span>
 						</div>
 					</div>
-					<div class="totalPrice__detail">
+					<div data-total-delivery-price class="totalPrice__detail">
 						Доставка
 						<div class="totalPrice__price_small">
 							Бесплатно
@@ -751,66 +753,68 @@
 			</div>
 
 			<div class="addressForm__body modal__body">
-				<div class="modal__tabs">
-					<button type="button" disabled>В пункт выдачи</button>
-					<button type="button">Курьером</button>
+				<div class="tabs modal__tabs">
+					<button data-modal-tab="point" type="button" class="tabs__tab tabs__tab_active">В пункт выдачи</button>
+					<button data-modal-tab="user" type="button" class="tabs__tab">Курьером</button>
 				</div>
 
 				<fieldset>
 					<legend>Мои адреса</legend>
 
-					<div class="modal__line">
-						<label class="radio addressForm__radio">
-							<input type="radio" value="mir" name="address" checked>
-							<span>
-									<span class="addressForm__address">Бишкек, улица Табышалиева, 57</span>
-									<span class="addressForm__rating">
-										<span>
-											<img src="/shopping-cart/assets/Star-be4dc973.svg" alt="Star" />
+					<div class="addressForm__addressesWrapper">
+						<div class="modal__line">
+							<label class="radio addressForm__radio">
+								<input type="radio" value="1" name="address" checked>
+								<span class="address">
+									<span class="address__data">г. Бишкек, микрорайон Джал, улица Ахунбаева Исы, д. 67/1</span>
+									<span class="address__details addressForm__rating">
+										<span class="address__rating">
+											<img class="address__star" src="/shopping-cart/assets/Star-be4dc973.svg" alt="Rating" />
 											4.99
 										</span>
 										Пункт выдачи
 									</span>
 								</span>
-						</label>
+							</label>
 
-						<button type="button"></button>
-					</div>
+							<button type="button"></button>
+						</div>
 
-					<div class="modal__line">
-						<label class="radio addressForm__radio">
-							<input type="radio" value="mir" name="address">
-							<span>
-									<span class="addressForm__address">Бишкек, улица Жукеева-Пудовкина, 77/1</span>
-									<span class="addressForm__rating">
-										<span>
-											<img src="/shopping-cart/assets/Star-be4dc973.svg" alt="Star" />
+						<div class="modal__line">
+							<label class="radio addressForm__radio">
+								<input type="radio" value="2" name="address">
+								<span class="address">
+									<span class="address__data">г. Бишкек, микрорайон Джал, улица Ахунбаева Исы, д. 67/1</span>
+									<span class="address__details addressForm__rating">
+										<span class="address__rating">
+											<img class="address__star" src="/shopping-cart/assets/Star-be4dc973.svg" alt="Rating" />
 											4.99
 										</span>
 										Пункт выдачи
 									</span>
 								</span>
-						</label>
+							</label>
 
-						<button type="button"></button>
-					</div>
+							<button type="button"></button>
+						</div>
 
-					<div class="modal__line addressForm__radio">
-						<label class="radio">
-							<input type="radio" value="mir" name="address">
-							<span>
-									<span class="addressForm__address">Бишкек, микрорайон Джал, улица Ахунбаева Исы, 67/1</span>
-									<span class="addressForm__rating">
-										<span>
-											<img src="/shopping-cart/assets/Star-be4dc973.svg" alt="Star" />
+						<div class="modal__line addressForm__radio">
+							<label class="radio">
+								<input type="radio" value="3" name="address">
+								<span class="address">
+									<span class="address__data">г. Бишкек, улица Табышалиева, д. 57</span>
+									<span class="address__details addressForm__rating">
+										<span class="address__rating">
+											<img class="address__star" src="/shopping-cart/assets/Star-be4dc973.svg" alt="Rating" />
 											4.99
 										</span>
 										Пункт выдачи
 									</span>
 								</span>
-						</label>
+							</label>
 
-						<button type="button"></button>
+							<button type="button"></button>
+						</div>
 					</div>
 				</fieldset>
 			</div>
