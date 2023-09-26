@@ -1,5 +1,5 @@
 import {userAddressBase} from "../templates/userAddressBase.ts";
-import {userAddresses} from "../../consts/userAddresses.ts";
+import {userAddresses} from "../../const/userAddresses.ts";
 import {store} from "../../store/store.ts";
 
 export const renderUserAddressTotal = () => {

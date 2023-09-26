@@ -1,26 +1,26 @@
-import {productsMock} from "../consts/products.ts";
-import {productsOutOfStockMock} from "../consts/productsOutOfStock.ts";
-import {Product} from "../types/products.ts";
+import {productsMock} from "../const/products.ts";
+import {productsOutOfStockMock} from "../const/productsOutOfStock.ts";
+import {Product, ProductOutOfStock} from "../types/products.ts";
 import {getProductsNumMod} from "../ts/helpers/getProductsNumMod.ts";
 import {Address} from "../types/address.ts";
-import {userAddresses} from "../consts/userAddresses.ts";
+import {userAddresses} from "../const/userAddresses.ts";
 import {UserData} from "../types/userData.ts";
 import {ValidationsError} from "../types/validationErrors.ts";
-import {userCards} from "../consts/userCards.ts";
+import {userCards} from "../const/userCards.ts";
 import {Card} from "../types/card.ts";
 import {validateField} from "../ts/helpers/validateField.ts";
 
 export class Store {
 	products: Product[];
 	ids: string[];
-	productsOutOfStock: Pick<Product, "id" | "img" | "name" | "options">[];
+	productsOutOfStock: ProductOutOfStock[];
 	productsNum: Record<string, number>;
 	addresses: Address[];
 	cards: Card[];
 	selectedProducts: string[];
 	selectedCard: string;
 	selectedAddress: string;
-	productsFavorite: (Product | Pick<Product, 'id' | 'name' | 'img' | 'options'>)[];
+	productsFavorite: (Product | ProductOutOfStock)[];
 	currency: string;
 	payImmediately: boolean;
 	userData: UserData;
@@ -163,10 +163,14 @@ export class Store {
 	}
 
 	canIOrderProducts() {
-		return Object.values(this.validationErrors).every((el) => !el) &&
+		return this.hasValidationErrors() &&
 			this.selectedProducts.length > 0 &&
 			this.selectedCard &&
 			this.selectedAddress
+	}
+
+	hasValidationErrors() {
+		return !Object.values(this.validationErrors).every((el) => !el)
 	}
 }
 

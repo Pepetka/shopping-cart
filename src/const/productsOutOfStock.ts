@@ -1,9 +1,9 @@
-import {Product} from "../types/products.ts";
+import {ProductOutOfStock} from "../types/products.ts";
 import productImg1 from "../assets/images/product1.png";
 import productImg2 from "../assets/images/product2.png";
 import productImg3 from "../assets/images/product3.png";
 
-export const productsOutOfStockMock: Pick<Product, 'id' | 'name' | 'img' | 'options'>[] = [
+export const productsOutOfStockMock: ProductOutOfStock[] = [
 	{
 		id: 'productOutOfStock1',
 		name: 'Футболка UZcotton мужская',
@@ -12,6 +12,7 @@ export const productsOutOfStockMock: Pick<Product, 'id' | 'name' | 'img' | 'opti
 			'Цвет': 'белый',
 			'Размер': '56',
 		},
+		link: '#'
 	},
 	{
 		id: 'productOutOfStock2',
@@ -20,10 +21,12 @@ export const productsOutOfStockMock: Pick<Product, 'id' | 'name' | 'img' | 'opti
 		options: {
 			'Цвет': 'прозрачный',
 		},
+		link: '#'
 	},
 	{
 		id: 'productOutOfStock3',
 		name: 'Карандаши цветные Faber-Castell "Замок", набор 24 цвета, заточенные, шестигранные, Faber-Castell',
 		img: productImg3,
+		link: '#'
 	}
 ];

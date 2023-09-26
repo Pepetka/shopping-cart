@@ -15,13 +15,53 @@
 	height: 22px;
 	margin-bottom: 2px;
 }
-.information__details span {
+.information__details {
+	position: relative;
+}
+.information__details > span {
 	box-sizing: content-box;
 	color: var(--confirmed-color);
 	border-bottom: 1px dashed rgba(var(--confirmed-color-rgb), 0.2);
+	cursor: pointer;
+	position: relative;
 }
 .information__details > br {
 	display: none;
+}
+.information_card {
+	position: relative;
+}
+.information__popover {
+	display: none;
+	width: 288px;
+	bottom: 0;
+	left: 50%;
+	transform: translate(-50%, calc(100% + 5px));
+	color: var(--secondary-color);
+	font-size: 13px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 16px;
+}
+.information__popover_total {
+	transform: translate(-50%, calc(100% - 3px));
+}
+
+@media (hover: hover) {
+	.information__details > span:hover > .information__popover {
+		display: flex;
+	}
+	.information_card:has(.information__details > span:hover) > .information__popover {
+		display: flex;
+	}
+}
+@media (hover: none) {
+	.information__details > span:active > .information__popover {
+		display: flex;
+	}
+	.information_card:has(.information__details > span:active) > .information__popover {
+		display: flex;
+	}
 }
 
 @media (min-width: 1000px) and (max-width: 1200px) {

@@ -48,11 +48,13 @@
 }
 .goods__list {
 	height: auto;
-	overflow: hidden;
 	display: flex;
 	flex-direction: column;
 	gap: 20px;
 	margin-bottom: 40px;
+}
+.goods__list_hidden {
+	overflow: hidden;
 }
 .goods__list_normal {
 	transition: margin-bottom 0.2s linear;

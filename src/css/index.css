@@ -20,6 +20,7 @@
 @import url('./payment.css');
 @import url('./paymentCard.css');
 @import url('./paymentForm.css');
+@import url('./popover.css');
 @import url('./price.css');
 @import url('./product.css');
 @import url('./radio.css');
@@ -105,6 +106,16 @@ input:focus {
 }
 a {
 	cursor: pointer;
+	color: inherit;
+}
+a, a:link, a:visited  {
+	text-decoration: none;
+	color: inherit;
+}
+
+a:hover  {
+	text-decoration: none;
+	color: inherit;
 }
 .hide {
 	display: none;

@@ -1,7 +1,7 @@
-import {Product} from "../../types/products.ts";
+import {ProductOutOfStock} from "../../types/products.ts";
 import {getOptions} from "../helpers/getOptions.ts";
 
-export const productCardOutOfStockTemplate = ({ id, name, img, options }: Pick<Product, 'id' | 'name' | 'img' | 'options'>) => {
+export const productCardOutOfStockTemplate = ({ id, name, img, options, link }: ProductOutOfStock) => {
 	return `
 		<div data-product="${id}" class="product goods__product">
 			<div>
@@ -17,9 +17,9 @@ export const productCardOutOfStockTemplate = ({ id, name, img, options }: Pick<P
 					<img class="product__image product__image_outOfStock" src="${img}" alt="Product image">
 
 					<div class="product__details product__details_outOfStock">
-						<div class="product__name">
+						<a href="${link}" class="product__name">
 							${name}
-						</div>
+						</a>
 
 						${getOptions(options)}
 					</div>

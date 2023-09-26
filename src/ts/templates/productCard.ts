@@ -2,7 +2,7 @@ import {Product} from "../../types/products.ts";
 import {getOptions} from "../helpers/getOptions.ts";
 import informationSVG from "../../assets/icons/Information.svg";
 
-export const productCardTemplate = ({ id, name, img, price, currency, prevPrice, options, company, totalQuantity }: Product, quantity: number) => {
+export const productCardTemplate = ({ id, name, img, price, currency, prevPrice, options, company, totalQuantity, link }: Product, quantity: number) => {
 	return `
 		<div data-product="${id}" class="product goods__product">
 			<div>
@@ -32,9 +32,9 @@ export const productCardTemplate = ({ id, name, img, price, currency, prevPrice,
 							</div>
 						</div>
 
-						<div class="product__name">
+						<a href="${link}" class="product__name">
 							${name}
-						</div>
+						</a>
 
 						${getOptions(options)}
 
@@ -42,7 +42,13 @@ export const productCardTemplate = ({ id, name, img, price, currency, prevPrice,
 							<div>${company[0]}</div>
 							<div>
 								${company[1]}
-								<img src="${informationSVG}" alt="information" />
+								<span>
+									<img src="${informationSVG}" alt="information" />
+									
+									<div class="popover product__companyDetails">
+										hjhj
+									</div>
+								</span>
 							</div>
 						</div>
 					</div>
@@ -89,6 +95,10 @@ export const productCardTemplate = ({ id, name, img, price, currency, prevPrice,
 					
 					<div class="price__previous ${(prevPrice * quantity).toString().length > 4 ? 'price__previous_bigNum' : ''}">
 						${(prevPrice * quantity).toLocaleString('ru')} ${currency}
+						
+						<div class="popover price__popover">
+							jkkj
+						</div>
 					</div>
 			</div>
 		</div>

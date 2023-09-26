@@ -30,6 +30,17 @@
 	font-style: normal;
 	font-weight: 400;
 	line-height: 16px;
+	cursor: pointer;
+}
+.price__previous:hover .price__popover {
+	display: flex;
+}
+.price__popover {
+	display: none;
+	width: 239px;
+	bottom: 0;
+	right: 0;
+	transform: translateY(calc(100%));
 }
 .price__previous:before {
 	content: " ";

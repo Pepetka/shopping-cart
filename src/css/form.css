@@ -33,7 +33,7 @@
 	line-height: 24px;
 	transition: top 0.1s linear, font-size 0.1s linear, line-height 0.1s linear;
 }
-.form__input:has(> input:focus) span, .form__input:has(> input:not(:placeholder-shown)) span  {
+.form__hasText, .form__input:has(> input:focus) span, .form__input:has(> input:not(:placeholder-shown)) span  {
 	position: relative;
 	top: -2px;
 	font-size: 13px;
@@ -93,7 +93,7 @@
 		pointer-events: none;
 		top: 24px;
 	}
-	.form__input:has(> input:focus) span, .form__input:has(> input:not(:placeholder-shown)) span  {
+	.form__hasText, .form__input:has(> input:focus) span, .form__input:has(> input:not(:placeholder-shown)) span  {
 		position: relative;
 		top: -2px;
 		font-size: 12px;

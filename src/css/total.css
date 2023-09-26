@@ -31,7 +31,7 @@
 	display: flex;
 	gap: 8px;
 }
-.total__agreement > span > span {
+.total__agreement > span > a {
 	border-bottom: 1px solid rgba(var(--secondary-color-rgb), 0.1);
 }
 .total__agreement img {

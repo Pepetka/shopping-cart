@@ -11,11 +11,26 @@ export const productsMock: Product[] = [
 		price: 522,
 		currency: 'сом',
 		prevPrice: 1051,
+		priceDetails: [
+			{
+				name: 'Скидка 48%',
+				sale: 505,
+			},
+			{
+				name: 'Скидка покупателя 2%',
+				sale: 24
+			}
+		],
 		options: {
 			'Цвет': 'белый',
 			'Размер': '56',
 		},
 		company: ['Коледино WB', 'OOO Вайлдберриз'],
+		companyDetails: {
+			name: 'OOO «ВАЙЛДБЕРРИЗ»',
+			ogrn: 'ОГРН: 5167746237148',
+			address: '129337, Москва, улица Красная Сосна, 2, корпус 1, стр. 1, помещение 2, офис ОГРН: 516774623714834',
+		},
 		totalQuantity: 2,
 		delivery: [
 			{
@@ -28,7 +43,8 @@ export const productsMock: Product[] = [
 				end: '01.03.2023',
 				quantity: 1,
 			}
-		]
+		],
+		link: '#'
 	},
 	{
 		id: 'product2',
@@ -37,10 +53,25 @@ export const productsMock: Product[] = [
 		price: 10500,
 		currency: 'сом',
 		prevPrice: 11500,
+		priceDetails: [
+			{
+				name: 'Скидка 7%',
+				sale: 770,
+			},
+			{
+				name: 'Скидка покупателя 2%',
+				sale: 230
+			}
+		],
 		options: {
 			'Цвет': 'прозрачный',
 		},
 		company: ['Коледино WB', 'OOO Мегапрофстиль'],
+		companyDetails: {
+			name: 'OOO «МЕГАПРОФСТИЛЬ»',
+			ogrn: 'ОГРН: 5167746237148',
+			address: '129337, Москва, улица Красная Сосна, 2, корпус 1, стр. 1, помещение 2, офис ОГРН: 516774623714834',
+		},
 		totalQuantity: 300,
 		delivery: [
 			{
@@ -53,7 +84,8 @@ export const productsMock: Product[] = [
 				end: '08.02.2023',
 				quantity: 116,
 			}
-		]
+		],
+		link: '#'
 	},
 	{
 		id: 'product3',
@@ -62,7 +94,22 @@ export const productsMock: Product[] = [
 		price: 247,
 		currency: 'сом',
 		prevPrice: 457,
+		priceDetails: [
+			{
+				name: 'Скидка 44%',
+				sale: 201,
+			},
+			{
+				name: 'Скидка покупателя 2%',
+				sale: 9
+			}
+		],
 		company: ['Коледино WB', 'OOO Вайлдберриз'],
+		companyDetails: {
+			name: 'OOO «ВАЙЛДБЕРРИЗ»',
+			ogrn: 'ОГРН: 5167746237148',
+			address: '129337, Москва, улица Красная Сосна, 2, корпус 1, стр. 1, помещение 2, офис ОГРН: 516774623714834',
+		},
 		totalQuantity: 2,
 		delivery: [
 			{
@@ -70,6 +117,7 @@ export const productsMock: Product[] = [
 				end: '06.02.2023',
 				quantity: 2,
 			},
-		]
+		],
+		link: '#'
 	}
 ];

@@ -2,7 +2,7 @@ import {cardProductTemplate} from "../templates/productCardMini.ts";
 import {DataForMin, Product} from "../../types/products.ts";
 import {getProductsNumMod} from "../helpers/getProductsNumMod.ts";
 import {store} from "../../store/store.ts";
-import {months} from "../../consts/months.ts";
+import {months} from "../../const/months.ts";
 
 export const productsForMinCards = (productsNum: Record<string, number>, products: Product[]) => {
 	const quantities: Record<string, number> = {};
