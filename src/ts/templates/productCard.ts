@@ -56,7 +56,7 @@ export const productCardTemplate = ({ id, name, img, price, currency, prevPrice,
 							<span>&minus;</span>
 						</button>
 						
-						<span class="counter__data">${quantity}</span>
+						<span class="counter__data" contenteditable="true">${quantity}</span>
 						
 						<button class="counter__incr" ${quantity === totalQuantity ? 'disabled' : ''}>
 							<span>&plus;</span>

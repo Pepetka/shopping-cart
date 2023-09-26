@@ -5,8 +5,7 @@ import {fixDeliveryDate} from "../fixes/fixDeliveryDate.ts";
 import {Product} from "../../types/products.ts";
 import {fixTotalPrev, fixTotalPrice, fixTotalSale} from "../fixes/fixTotal.ts";
 
-const change = (id: string, plus: HTMLButtonElement, minus: HTMLButtonElement, quantity: HTMLElement, product: Product, k: 1 | -1) => {
-	quantity.innerText = `${+quantity.innerText + k}`;
+const change = (id: string, plus: HTMLButtonElement, minus: HTMLButtonElement, quantity: HTMLElement, product: Product) => {
 	store.setProductsNum(id, +quantity.innerText);
 
 	plus.disabled = store.productsNum[id] === product.totalQuantity;
@@ -34,11 +33,30 @@ export const changeProductsQuantity = () => {
 		minus.disabled = store.productsNum[id] === 1;
 
 		minus.addEventListener('click', () => {
-			change(id, plus, minus, quantity, product, -1);
+			quantity.innerText = `${+quantity.innerText - 1}`;
+			change(id, plus, minus, quantity, product);
 		});
 
 		plus.addEventListener('click', () => {
-			change(id, plus, minus, quantity, product, 1);
+			quantity.innerText = `${+quantity.innerText + 1}`;
+			change(id, plus, minus, quantity, product);
+		});
+
+		quantity.addEventListener('blur', () => {
+			let value = +quantity.innerText.replace(/\D/g, "");
+
+			if (value < 1) value = 1;
+			if (value > product.totalQuantity) value = product.totalQuantity;
+
+			quantity.innerText = `${value}`;
+			change(id, plus, minus, quantity, product);
+		});
+
+		quantity.addEventListener("keydown", function(event) {
+			if (event.key === 'Enter') {
+				event.preventDefault();
+				quantity.blur();
+			}
 		});
 	});
 };

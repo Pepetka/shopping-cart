@@ -25,6 +25,8 @@ export class Store {
 	payImmediately: boolean;
 	userData: UserData;
 	validationErrors: ValidationsError;
+	selectedCardData: Card;
+	selectedAddressData: Address;
 
 	constructor() {
 		this.products = productsMock;
@@ -53,6 +55,8 @@ export class Store {
 			phone: null,
 			INN: null,
 		};
+		this.selectedCardData = userCards.find((card) => card.id === this.selectedCard)!;
+		this.selectedAddressData = userAddresses.find((address) => address.id === this.selectedAddress)!;
 	}
 
 	getValidationErrors() {
@@ -101,6 +105,11 @@ export class Store {
 		}
 	}
 
+	getSelectedProductsWithNums() {
+		return this.selectedProducts
+			.reduce((acc, product) => ({ ...acc, [product]: this.productsNum[product] }), {});
+	}
+
 	setProductsFavorite(id: string) {
 		if (this.products.some(((product) => product.id === id))) {
 			const itemIndex = this.products.findIndex(((product) => product.id !== id));
@@ -137,10 +146,12 @@ export class Store {
 
 	setSelectedCard(id: string) {
 		this.selectedCard = id;
+		this.selectedCardData = userCards.find((card) => card.id === this.selectedCard)!;
 	}
 
 	setSelectedAddress(id: string) {
 		this.selectedAddress = id;
+		this.selectedAddressData = userAddresses.find((address) => address.id === this.selectedAddress)!;
 	}
 
 	setProductsNum(key: string, value: number) {
@@ -149,6 +160,13 @@ export class Store {
 
 	removeAddress(id: string) {
 		this.addresses = this.addresses.filter((address) => address.id !== id);
+	}
+
+	canIOrderProducts() {
+		return Object.values(this.validationErrors).every((el) => !el) &&
+			this.selectedProducts.length > 0 &&
+			this.selectedCard &&
+			this.selectedAddress
 	}
 }
 

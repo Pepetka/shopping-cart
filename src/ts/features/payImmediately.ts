@@ -10,7 +10,7 @@ export const payImmediately = () => {
 		if (payImmediately.checked) {
 			immediatelyAdditions.forEach((additions) => {
 				additions.classList.add('hide');
-				totalButton.textContent = 'Оплатить 1 016 сом';
+				totalButton.textContent = `Оплатить ${store.getTotalPrice().toLocaleString('ru')} ${store.currency}`;
 			});
 			store.setPayImmediately(true);
 		} else {

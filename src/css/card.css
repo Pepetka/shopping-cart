@@ -107,6 +107,9 @@
 		line-height: 28px;
 		letter-spacing: -0.2px;
 	}
+	.card__title > br {
+		display: none;
+	}
 	.card__content {
 		display: flex;
 		flex-direction: column;

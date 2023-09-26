@@ -10,6 +10,15 @@ export const deleteAddress = () => {
 		deleteBtn.addEventListener('click', () => {
 			addressElement.remove();
 			store.removeAddress(id);
+
+			const type = addressElement.dataset['addressType'] ?? '';
+			const newSelectedAddress = store.addresses.filter((address) => address.type === type);
+
+			modalAddresses.forEach((addressEl) => {
+				const id = addressEl.dataset['deleteAddress'] ?? '';
+				const input = addressEl.querySelector('input')!;
+				input.checked = id === newSelectedAddress[0].id;
+			});
 		});
 	});
 };

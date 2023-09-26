@@ -40,6 +40,7 @@
 	--header-height: 112px;
 	--header-height-mobile: 80px;
 	--footer-height: 88px;
+	--tabbar-height: 56px;
 	--header-content-height: calc(var(--header-height) - var(--overlap-heihgt));
 	--header-content-height-mobile: calc(var(--header-height-mobile) - var(--overlap-heihgt));
 	--footer-content-height: calc(var(--footer-height) - var(--overlap-heihgt));
@@ -107,4 +108,10 @@ a {
 }
 .hide {
 	display: none;
+}
+
+@media (max-width: 768px) {
+	body {
+		margin-bottom: var(--tabbar-height);
+	}
 }

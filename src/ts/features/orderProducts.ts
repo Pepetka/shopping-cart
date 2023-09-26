@@ -11,5 +11,13 @@ export const orderProducts = () => {
 		inputBlocks.forEach((block) => {
 			validationError(block, errors);
 		});
+
+		if (store.canIOrderProducts()) {
+			alert(`Ordered products ids: ${JSON.stringify(store.getSelectedProductsWithNums())}\n` +
+				`Total price: ${store.getTotalPrice()}\n` +
+				`Payment card: ${store.selectedCardData}\n` +
+				`Address: ${store.selectedAddress}\n` +
+				`Pay immediately: ${store.payImmediately}`);
+		}
 	});
 };

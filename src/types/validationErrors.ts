@@ -2,11 +2,11 @@ import {UserData} from "./userData.ts";
 
 export enum NameValidationError {
 	EMPTY = 'Укажите имя',
-	WRONG = 'Только кириллица'
+	WRONG = 'Укажите имя'
 }
 export enum SurnameValidationError {
 	EMPTY = 'Введите фамилию',
-	WRONG = 'Только кириллица'
+	WRONG = 'Введите фамилию'
 }
 export enum EmailValidationError {
 	EMPTY = 'Укажите электронную почту',
