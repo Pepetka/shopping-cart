@@ -2,6 +2,8 @@ import {store} from "../../store/store.ts";
 import {fixProductsNum} from "../fixes/fixProductsNum.ts";
 import {renderMiniProducts} from "../render/renderMiniProducts.ts";
 import {fixOutOfStockNum} from "../fixes/fixOutOfStockNum.ts";
+import {fixOrderButtonPrice} from "../fixes/fixOrderButtonPrice.ts";
+import {fixTotalPrev, fixTotalPrice, fixTotalSale} from "../fixes/fixTotal.ts";
 
 const deleteProduct = (product: HTMLDivElement) => {
 	product.remove();
@@ -9,6 +11,10 @@ const deleteProduct = (product: HTMLDivElement) => {
 	fixProductsNum();
 	fixOutOfStockNum();
 	renderMiniProducts();
+	fixOrderButtonPrice();
+	fixTotalPrice();
+	fixTotalPrev();
+	fixTotalSale();
 }
 
 export const deleteFavoriteProducts = () => {

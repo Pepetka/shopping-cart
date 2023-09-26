@@ -3,6 +3,7 @@
 	display: flex;
 	align-items: center;
 	gap: 8px;
+	position: relative;
 }
 .information_card {
 	width: 100%;
@@ -43,7 +44,7 @@
 	font-weight: 400;
 	line-height: 16px;
 }
-.information__popover_total {
+.information__popover_center {
 	transform: translate(-50%, calc(100% - 3px));
 }
 
@@ -52,14 +53,6 @@
 		display: flex;
 	}
 	.information_card:has(.information__details > span:hover) > .information__popover {
-		display: flex;
-	}
-}
-@media (hover: none) {
-	.information__details > span:active > .information__popover {
-		display: flex;
-	}
-	.information_card:has(.information__details > span:active) > .information__popover {
 		display: flex;
 	}
 }

@@ -35,9 +35,9 @@ export class Store {
 		this.productsNum = this.ids.reduce((acc, id) => ({ ...acc, [id]: 1 }), {});
 		this.addresses = userAddresses;
 		this.cards = userCards;
-		this.selectedProducts = [];
+		this.selectedProducts = this.products.reduce<string[]>((acc, { id }) => [ ...acc, id ], []);
 		this.selectedCard = 'card1';
-		this.selectedAddress = 'userAddress2';
+		this.selectedAddress = 'userAddress1';
 		this.productsFavorite = [];
 		this.currency = this.products[0].currency;
 		this.payImmediately = false;
@@ -163,7 +163,7 @@ export class Store {
 	}
 
 	canIOrderProducts() {
-		return this.hasValidationErrors() &&
+		return !this.hasValidationErrors() &&
 			this.selectedProducts.length > 0 &&
 			this.selectedCard &&
 			this.selectedAddress

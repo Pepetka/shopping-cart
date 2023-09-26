@@ -1,4 +1,5 @@
 import {store} from "../../store/store.ts";
+import {getFormattedProductCount} from "../helpers/getFormattedProductCount.ts";
 
 export const fixTotalPrice = () => {
 	const totalPriceElement: HTMLDivElement = document.querySelector('.totalPrice__price')!;
@@ -11,7 +12,7 @@ export const fixTotalPrice = () => {
 export const fixTotalPrev = () => {
 	const prevPriceElement: HTMLDivElement = document.querySelector('[data-total-prev]')!;
 	prevPriceElement.innerHTML = `
-		${store.getTotalNum()} товара
+		${getFormattedProductCount(store.getTotalNum())}
 		<div class="totalPrice__price_small">
 			${store.getTotalPrevPrice().toLocaleString('ru')}
 			<span>${store.currency}</span>

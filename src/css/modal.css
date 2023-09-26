@@ -82,14 +82,17 @@
 	height: 20px;
 	background: url("../assets/icons/Basket_gray.svg");
 }
-.modal__line button:hover {
-	background: url("../assets/icons/Basket_hover.svg");
-}
 .modal__tabs {
 	width: 100%;
 	display: grid;
 	grid-column-gap: 8px;
 	grid-template-columns: 1fr 1fr;
+}
+
+@media (hover: hover) {
+	.modal__line button:hover {
+		background: url("../assets/icons/Basket_hover.svg");
+	}
 }
 
 @media (max-width: 576px) {

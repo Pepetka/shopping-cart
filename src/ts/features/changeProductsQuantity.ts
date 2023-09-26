@@ -4,6 +4,7 @@ import {renderMiniProducts} from "../render/renderMiniProducts.ts";
 import {fixDeliveryDate} from "../fixes/fixDeliveryDate.ts";
 import {Product} from "../../types/products.ts";
 import {fixTotalPrev, fixTotalPrice, fixTotalSale} from "../fixes/fixTotal.ts";
+import {fixOrderButtonPrice} from "../fixes/fixOrderButtonPrice.ts";
 
 const change = (id: string, plus: HTMLButtonElement, minus: HTMLButtonElement, quantity: HTMLElement, product: Product) => {
 	store.setProductsNum(id, +quantity.innerText);
@@ -17,6 +18,7 @@ const change = (id: string, plus: HTMLButtonElement, minus: HTMLButtonElement, q
 	fixTotalPrice();
 	fixTotalPrev();
 	fixTotalSale();
+	fixOrderButtonPrice();
 };
 
 export const changeProductsQuantity = () => {

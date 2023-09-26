@@ -112,13 +112,15 @@ a, a:link, a:visited  {
 	text-decoration: none;
 	color: inherit;
 }
-
-a:hover  {
-	text-decoration: none;
-	color: inherit;
-}
 .hide {
 	display: none;
+}
+
+@media (hover: hover) {
+	a:hover  {
+		text-decoration: none;
+		color: inherit;
+	}
 }
 
 @media (max-width: 768px) {
