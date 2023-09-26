@@ -34,10 +34,12 @@ document.addEventListener('DOMContentLoaded', () => {
 	fixTotalPrev();
 	fixTotalSale();
 
+	// отрисовка выбранной по-умолчанию карты
 	renderUserCardModal();
 	renderUserCardMethod();
 	renderUserCardTotal();
 
+	// отрисовка выбранного по-умолчанию адреса
 	renderUserAddressModal();
 	renderUserAddressMethod();
 	renderUserAddressTotal();
@@ -66,7 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	// выбор адреса
 	selectAddress();
 
-	// удаление адресов
+	// удаление адреса
 	deleteAddress();
 
 	// работа с формой пользователя

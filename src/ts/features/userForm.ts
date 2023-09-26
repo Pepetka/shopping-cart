@@ -7,7 +7,7 @@ const numberFormatted = (input: HTMLInputElement) => {
 
 	const numericValue = inputValue.replace(/\D/g, "");
 
-	const formattedValue = `+${numericValue.substring(0, 1)} ${numericValue.substring(1, 4)} ${numericValue.substring(4, 7)} ${numericValue.substring(7, 9)} ${numericValue.substring(9, 11)}`;
+	const formattedValue = `+${numericValue.substring(0, 1) === '8' ? '7' : numericValue.substring(0, 1)} ${numericValue.substring(1, 4)} ${numericValue.substring(4, 7)} ${numericValue.substring(7, 9)} ${numericValue.substring(9, 11)}`;
 
 	input.value = formattedValue.trim();
 
